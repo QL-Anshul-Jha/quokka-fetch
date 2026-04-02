@@ -33,18 +33,19 @@ export type QuokkaFetchConfig = {
   baseURL?: string;
   headers?: HeadersInit;
   responseType?: ResponseType;
+  timeout?: number;
 };
 
 export interface QuokkaRequestPayload extends Omit<FetchOptions, 'method' | 'body'> {
   url: string;
-  method: HttpMethod | string;
+  method?: HttpMethod;
   payload?: RequestPayload;
   params?: QueryParams;
 }
 
 export interface QuokkaCallable {
   <T = JSONValue>(payload: QuokkaRequestPayload): Promise<T>;
-  
+
   // Fluent Event Hooks
   onRequest(handler: (config: QuokkaRequestConfig) => QuokkaRequestConfig | Promise<QuokkaRequestConfig>): this;
   onResponse(handler: (data: InterceptedResponseData, response: Response) => InterceptedResponseData | Promise<InterceptedResponseData>): this;

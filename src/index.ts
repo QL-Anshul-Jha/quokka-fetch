@@ -1,6 +1,6 @@
 import { HttpMethod, ResponseType, QuokkaErrorCode } from './utils/enums';
 import { FetchOptions, JSONValue, QuokkaFetchConfig, QuokkaInterceptors, QuokkaRequestConfig, InterceptedResponseData, QuokkaCallable, QuokkaRequestPayload, QuokkaFetchError } from './utils/types';
-import { buildQueryString, mergeHeaders, parseResponseBody, handleResponseError, resolvePayloadAndHeaders, createAbortController, resolveFinalSignal } from './utils/helpers';
+import { buildQueryString, mergeHeaders, parseResponseBody, handleResponseError, resolvePayloadAndHeaders, getTimeoutController, resolveFinalSignal } from './utils/helpers';
 
 export * from './utils/types';
 export * from './utils/enums';
@@ -25,7 +25,7 @@ class QuokkaFetchInternal {
   }
 
   public async request<T>(endpoint: string, options: FetchOptions = {}): Promise<T> {
-    
+
     // --- 1. CONFIGURATION SETUP ---
     // Merge the base URL with the requested endpoint and default options
     let config: QuokkaRequestConfig = { url: this.baseURL + endpoint, ...options };
@@ -37,7 +37,7 @@ class QuokkaFetchInternal {
     }
 
     const { url, query, timeout, responseType, body: rawBody, ...customOptions } = config;
-    
+
     // --- 3. QUERY PARAMETERS ---
     // Format JSON object dictionaries gracefully into URL search param notation
     const qs = buildQueryString(query);
@@ -53,16 +53,16 @@ class QuokkaFetchInternal {
 
     // --- 6. TIMEOUTS & ABORT CONTROLLERS ---
     // Automatically manage natively explicit timeout signals while injecting user-defined signals safely
-    const { controller, timeoutSignal, timeoutId } = createAbortController(timeout);
+    const { controller, timeoutSignal, timeoutId } = getTimeoutController(timeout);
     const finalSignal = resolveFinalSignal(timeout, customOptions.signal, controller, timeoutSignal);
 
     try {
-      
+
       // --- 7. NETWORK EXECUTION ---
       // Trigger execution via browser-level fetch API mapped to standardized formatting
       const response = await fetch(finalUrl, { ...customOptions, headers, body: finalBody, signal: finalSignal });
       const expectedType = responseType || this.defaultResponseType;
-      
+
       // --- 8. RESPONSE PARSING & THROWING ---
       // Automatically evaluate network ok-state before parsing response bytes dynamically
       let data = await parseResponseBody(response, expectedType);
@@ -102,7 +102,7 @@ class QuokkaFetchInternal {
 
       throw qfError;
     } finally {
-      
+
       // --- 12. LIFECYCLE CLEANUP ---
       // Avoid hanging promises or native memory-leak garbage collection issues natively
       // eslint-disable-next-line @typescript-eslint/no-unused-expressions
