@@ -1,16 +1,20 @@
 /* eslint-disable no-console */
-import qf, { HttpMethod, QuokkaFetchError } from './index';
+import qf, { HttpMethod, QuokkaFetchError, createQuokkaFetch } from './index';
 
 async function runTests() {
-  console.log('🚀 TESTING STRUCTURED QUOKKA-FETCH ERRORS...\n');
+  console.log('🚀 TESTING QUOKKA-FETCH FEATURES...\n');
 
   try {
     // 1. Success Case
-    const user = await qf<{ name: string }>({
-      url: 'https://jsonplaceholder.typicode.com/users/1',
-      method: HttpMethod.GET
-    });
-    console.log('✅ GET Success:', user.name);
+    try {
+      const user = await qf<{ name: string }>({
+        url: 'https://jsonplaceholder.typicode.com/users/1',
+        method: HttpMethod.GET
+      });
+      console.log('✅ GET Success:', user.name);
+    } catch (e) {
+      console.log('❌ GET Success failed:', e);
+    }
 
     // 2. Structured 404 Case
     try {
@@ -19,16 +23,15 @@ async function runTests() {
         url: 'https://jsonplaceholder.typicode.com/invalid-endpoint-999',
         method: HttpMethod.GET
       });
+      console.log('❌ Failed to catch structured error');
     } catch (e) {
       if (e instanceof QuokkaFetchError) {
-        console.log('✅ Caught Structured QuokkaFetchError:');
-        console.log(' - Name:', e.name);
-        console.log(' - Code:', e.code);
-        console.log(' - Status:', e.status);
-        console.log(' - Method:', e.method);
-        console.log(' - Retryable:', e.retryable);
-        console.log(' - RequestID:', e.requestId);
-        console.log(' - Timestamp:', e.timestamp);
+        console.log('✅ Caught Structured QuokkaFetchError:', {
+          Code: e.code,
+          Status: e.status
+        });
+      } else {
+        console.log('❌ Unexpected error type:', e);
       }
     }
 
@@ -41,11 +44,10 @@ async function runTests() {
         timeout: 1
       });
     } catch (e) {
-      if (e instanceof QuokkaFetchError) {
-        console.log('✅ Caught Timeout Error:');
-        console.log(' - Code:', e.code);
-        console.log(' - isTimeout:', e.isTimeoutError);
-        console.log(' - Retryable:', e.retryable);
+      if (e instanceof QuokkaFetchError && e.isTimeoutError) {
+        console.log('✅ Caught Timeout Error:', e.code);
+      } else {
+        console.log('❌ Timeout test failed:', e);
       }
     }
 
@@ -53,18 +55,52 @@ async function runTests() {
     try {
       console.log('\nTesting Abort Error...');
       const controller = new AbortController();
-      const req = qf({
+      const p = qf({
         url: 'https://jsonplaceholder.typicode.com/posts',
         method: HttpMethod.GET,
         signal: controller.signal
       });
       controller.abort();
-      await req;
+      await p;
     } catch (e) {
-      if (e instanceof QuokkaFetchError) {
-        console.log('✅ Caught Abort Error:');
-        console.log(' - Code:', e.code);
-        console.log(' - isAbort:', e.isAbortError);
+      if (e instanceof QuokkaFetchError && e.isAbortError) {
+        console.log('✅ Caught Abort Error:', e.code);
+      } else {
+        console.log('❌ Abort test failed:', e);
+      }
+    }
+
+    // 5. Global Timeout Case
+    try {
+      console.log('\nTesting Global Timeout (1ms)...');
+      const customQf = createQuokkaFetch({ timeout: 1 });
+      await customQf({
+        url: 'https://jsonplaceholder.typicode.com/posts',
+        method: HttpMethod.GET
+      });
+    } catch (e) {
+      if (e instanceof QuokkaFetchError && e.isTimeoutError) {
+        console.log('✅ Global Timeout caught correctly');
+      } else {
+        console.log('❌ Global Timeout failed:', e);
+      }
+    }
+
+    // 6. Parameter Validation Case
+    try {
+      console.log('\nTesting Parameter Validation...');
+      await qf({
+        url: 'https://jsonplaceholder.typicode.com/posts',
+        method: HttpMethod.GET,
+        params: {
+          page: (() => 9) as never
+        }
+      });
+    } catch (e) {
+      if (e instanceof TypeError && e.message.includes('Invalid parameter type')) {
+        console.log('✅ Caught expected TypeError for invalid parameter');
+      } else {
+        console.log('❌ Parameter validation failed:', e);
       }
     }
 
