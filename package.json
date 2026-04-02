@@ -4,6 +4,13 @@
   "description": "A lightweight fetch wrapper exclusively for @quokkalabs.com",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts",
+    "scripts/preinstall.js",
+    "!dist/test.*",
+    "!dist/demo.*"
+  ],
   "scripts": {
     "preinstall": "node scripts/preinstall.js",
     "prepare": "husky",

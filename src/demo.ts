@@ -1,81 +1,83 @@
 /* eslint-disable no-console */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import qf, { createQuokkaFetch, QuokkaFetchError } from './index';
+import { createQuokkaFetch, HttpMethod, QuokkaFetchError } from './index';
 
-async function runDemo() {
-  console.log('--- QuokkaFetch Demo ---');
+async function demo() {
+  console.log('🚀 QUOKKAFETCH DEMO\n');
+
+  // ========================================
+  // SETUP 1: Global retry + cache via config
+  // ========================================
+  const apiWithFeatures = createQuokkaFetch({
+    baseURL: 'https://jsonplaceholder.typicode.com',
+    retry: 2,
+    retryDelay: 500,
+    qCache: true,
+    qCacheTime: 30000,
+  });
+
+  // ========================================
+  // SETUP 2: Clean API (no retry, no cache)
+  // ========================================
+  const api = createQuokkaFetch({
+    baseURL: 'https://jsonplaceholder.typicode.com',
+  });
+
+  // ----- CACHE DEMO (global config) -----
+  console.log('--- CACHE (via config) ---');
+  const t1 = Date.now();
+  await apiWithFeatures({ url: '/users/1' });
+  console.log(`  1st call (network): ${Date.now() - t1}ms`);
+
+  const t2 = Date.now();
+  await apiWithFeatures({ url: '/users/1' });
+  console.log(`  2nd call (cached):  ${Date.now() - t2}ms ⚡\n`);
+
+  // ----- CACHE DEMO (per-request) -----
+  console.log('--- CACHE (per-request on clean API) ---');
+  const t3 = Date.now();
+  await api({ url: '/users/2', qCache: true, qCacheTime: 10000 });
+  console.log(`  1st call (network): ${Date.now() - t3}ms`);
+
+  const t4 = Date.now();
+  await api({ url: '/users/2', qCache: true });
+  console.log(`  2nd call (cached):  ${Date.now() - t4}ms ⚡\n`);
+
+  // ----- RETRY DEMO (global config) -----
+  console.log('--- RETRY (via config) ---');
+  try {
+    await apiWithFeatures({ url: '/posts', timeout: 1 });
+  } catch (e) {
+    if (e instanceof QuokkaFetchError) {
+      console.log(`  Error: ${e.code} — retried automatically before failing\n`);
+    }
+  }
+
+  // ----- RETRY DEMO (per-request) -----
+  console.log('--- RETRY (per-request on clean API) ---');
+  try {
+    await api({ url: '/posts', timeout: 1, retry: 1, retryDelay: 200 });
+  } catch (e) {
+    if (e instanceof QuokkaFetchError) {
+      console.log(`  Error: ${e.code} — retried 1 time before failing\n`);
+    }
+  }
+
+  // ----- ABORT CONTROLLER DEMO -----
+  console.log('--- ABORT CONTROLLER ---');
+  const controller = new AbortController();
+
+  // Abort after 50ms
+  setTimeout(() => controller.abort(), 50);
 
   try {
-    // 1. Configuration
-    const api = createQuokkaFetch({
-      baseURL: 'https://jsonplaceholder.typicode.com',
-      timeout: 5000,
-      headers: {
-        'X-Demo-Mode': 'true'
-      }
-    });
-
-    // 2. Request Interceptor
-    api.onRequest((config) => {
-      console.log(`[Request] ${config.method} ${config.url}`);
-      return config;
-    });
-
-    // 3. Response Interceptor
-    api.onResponse((data, response) => {
-      console.log(`[Response] Status: ${response.status}`);
-      return data;
-    });
-
-    // 4. Error Interceptor
-    api.onError((error) => {
-      console.error(`[Error] ${error.message}`);
-    });
-
-    // --- Demo Cases ---
-
-    // 2A. Simple GET
-    console.log('\n--- Case A: Simple GET ---');
-    const posts = await api<any[]>({ url: '/posts', params: { _limit: 3 } });
-    console.log('Fetched Posts Count:', posts.length);
-
-    // 2B. POST with Sniffing
-    console.log('\n--- Case B: POST with Auto-Sniffing ---');
-    await api({
-      url: '/posts',
-      method: 'POST' as any,
-      payload: { title: 'Hello', body: 'Quokka', userId: 1 }
-    });
-    console.log('POST Success (application/json sniffed)');
-
-    // 2C. Custom Timeout
-    console.log('\n--- Case C: Custom Timeout ---');
-    try {
-      await api({ url: '/posts', timeout: 1 });
-    } catch (error: any) {
-      console.log('Caught Timeout:', error.code);
+    await api({ url: '/posts', method: HttpMethod.GET, signal: controller.signal });
+  } catch (e) {
+    if (e instanceof QuokkaFetchError && e.isAbortError) {
+      console.log(`  ✅ Request aborted: ${e.code}\n`);
     }
-
-    // 2D. Structured Error Handling
-    console.log('\n--- Case D: Structured Error Catching ---');
-    try {
-      await qf({ url: 'https://jsonplaceholder.typicode.com/invalid-path-404' });
-    } catch (error) {
-      const isQFError = error instanceof QuokkaFetchError;
-      [isQFError].filter(Boolean).forEach(() => {
-        const e = error as QuokkaFetchError;
-        console.log('Caught Expected Error:');
-        console.log(' - Name:', e.name);
-        console.log(' - Code:', e.code);
-        console.log(' - Status:', e.status);
-        console.log(' - RequestID:', e.requestId);
-      });
-    }
-
-    console.log('\n✨ DEMO COMPLETED SUCCESSFULLY!');
-  } catch (err) {
-    console.error('Demo Error:', err);
   }
+
+  console.log('🎉 DEMO COMPLETE!');
 }
 
-void runDemo();
+demo().catch(console.error);

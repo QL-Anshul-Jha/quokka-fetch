@@ -9,7 +9,14 @@ export type QueryParams = Record<string, string | number | boolean | null | unde
 
 export type RequestPayload = JSONValue | BodyInit | null;
 
-export type FetchOptions = Omit<RequestInit, 'method' | 'body'> & {
+export type QuokkaFeatureOptions = {
+  retry?: number;
+  retryDelay?: number;
+  qCache?: boolean;
+  qCacheTime?: number;
+};
+
+export type FetchOptions = Omit<RequestInit, 'method' | 'body'> & QuokkaFeatureOptions & {
   method?: HttpMethod;
   query?: QueryParams;
   body?: RequestPayload;
@@ -29,7 +36,7 @@ export interface QuokkaInterceptors {
   error: Array<(error: Error) => Promise<void> | void>;
 }
 
-export type QuokkaFetchConfig = {
+export type QuokkaFetchConfig = QuokkaFeatureOptions & {
   baseURL?: string;
   headers?: HeadersInit;
   responseType?: ResponseType;
@@ -50,6 +57,9 @@ export interface QuokkaCallable {
   onRequest(handler: (config: QuokkaRequestConfig) => QuokkaRequestConfig | Promise<QuokkaRequestConfig>): this;
   onResponse(handler: (data: InterceptedResponseData, response: Response) => InterceptedResponseData | Promise<InterceptedResponseData>): this;
   onError(handler: (error: Error) => Promise<void> | void): this;
+
+  // Cache Management
+  clearCache(): void;
 }
 
 export interface QuokkaFetchErrorParams {
@@ -64,6 +74,12 @@ export interface QuokkaFetchErrorParams {
   cause?: Error;
   config: QuokkaRequestConfig;
   raw?: JSONValue;
+}
+
+export interface CacheEntry {
+  data: InterceptedResponseData;
+  timestamp: number;
+  ttl: number;
 }
 
 export class QuokkaFetchError extends Error {
@@ -111,4 +127,3 @@ export class QuokkaFetchError extends Error {
     }
   }
 }
-
