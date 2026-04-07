@@ -1,7 +1,7 @@
-import { HttpMethod, ResponseType, QuokkaErrorCode } from './utils/enums';
-import { FetchOptions, JSONValue, QuokkaFetchConfig, QuokkaInterceptors, QuokkaRequestConfig, InterceptedResponseData, QuokkaCallable, QuokkaRequestPayload, QuokkaFetchError } from './utils/types';
+import { HttpMethod, ResponseType, BlazionErrorCode } from './utils/enums';
+import { FetchOptions, JSONValue, BlazionConfig, BlazionInterceptors, BlazionRequestConfig, InterceptedResponseData, BlazionCallable, BlazionRequestPayload, BlazionError } from './utils/types';
 import { buildQueryString, mergeHeaders, parseResponseBody, handleResponseError, resolvePayloadAndHeaders, getTimeoutController, resolveFinalSignal } from './utils/helpers';
-import { QuokkaCache } from './utils/cache';
+import { BlazionCache } from './utils/cache';
 import { executeWithRetry } from './utils/retry';
 
 export * from './utils/types';
@@ -12,7 +12,7 @@ const DEFAULT_RETRY_COUNT = 0;
 const DEFAULT_RETRY_DELAY = 1000;
 const DEFAULT_CACHE_TIME = 300000; // 5 minutes
 
-class QuokkaFetchInternal {
+class BlazionInternal {
   private baseURL: string;
   private defaultHeaders: HeadersInit;
   private defaultResponseType: ResponseType;
@@ -21,15 +21,15 @@ class QuokkaFetchInternal {
   private cacheEnabled: boolean;
   private cacheTime: number;
   private timeout?: number;
-  private cache = new QuokkaCache();
+  private cache = new BlazionCache();
 
-  public interceptors: QuokkaInterceptors = {
+  public interceptors: BlazionInterceptors = {
     request: [],
     response: [],
     error: [],
   };
 
-  constructor(config?: QuokkaFetchConfig) {
+  constructor(config?: BlazionConfig) {
     this.baseURL = config?.baseURL || '';
     this.defaultHeaders = config?.headers || {
       'Accept': 'application/json, text/plain, */*',
@@ -47,7 +47,7 @@ class QuokkaFetchInternal {
     // --- 1. CONFIGURATION SETUP ---
     // Merge the base URL with the requested endpoint and merge headers early
     // so interceptors can see the full resolved headers
-    let config: QuokkaRequestConfig = {
+    let config: BlazionRequestConfig = {
       url: this.baseURL + endpoint,
       ...options,
       headers: mergeHeaders(this.defaultHeaders, options.headers),
@@ -124,18 +124,18 @@ class QuokkaFetchInternal {
 
         return data as Extract<typeof data, T>;
       } catch (e) {
-        if (e instanceof QuokkaFetchError) throw e;
+        if (e instanceof BlazionError) throw e;
 
         const error = e as Error;
-        let code = QuokkaErrorCode.NETWORK_ERROR;
+        let code = BlazionErrorCode.NETWORK_ERROR;
         let message = error.message;
 
         if (error.name === 'AbortError') {
-          code = finalTimeout ? QuokkaErrorCode.TIMEOUT : QuokkaErrorCode.ABORT;
+          code = finalTimeout ? BlazionErrorCode.TIMEOUT : BlazionErrorCode.ABORT;
           message = finalTimeout ? `Request timed out after ${finalTimeout}ms` : 'Request was manually aborted';
         }
 
-        const qfError = new QuokkaFetchError({
+        const qfError = new BlazionError({
           code,
           message,
           url: finalUrl,
@@ -169,10 +169,10 @@ class QuokkaFetchInternal {
   }
 }
 
-export function createQuokkaFetch(config?: QuokkaFetchConfig): QuokkaCallable {
-  const instance = new QuokkaFetchInternal(config);
+export function createBlazion(config?: BlazionConfig): BlazionCallable {
+  const instance = new BlazionInternal(config);
 
-  const callable = function <T = JSONValue>(payloadArgs: QuokkaRequestPayload): Promise<T> {
+  const callable = function <T = JSONValue>(payloadArgs: BlazionRequestPayload): Promise<T> {
     const { url, method, payload, params, query, ...rest } = payloadArgs;
     const options: FetchOptions = {
       method: method as HttpMethod,
@@ -185,7 +185,7 @@ export function createQuokkaFetch(config?: QuokkaFetchConfig): QuokkaCallable {
   };
 
   const finalCallable = Object.assign(callable, {
-    onRequest: (handler: (config: QuokkaRequestConfig) => QuokkaRequestConfig | Promise<QuokkaRequestConfig>) => {
+    onRequest: (handler: (config: BlazionRequestConfig) => BlazionRequestConfig | Promise<BlazionRequestConfig>) => {
       instance.interceptors.request.push(handler);
       return finalCallable as never;
     },
@@ -205,5 +205,5 @@ export function createQuokkaFetch(config?: QuokkaFetchConfig): QuokkaCallable {
   return finalCallable as never;
 }
 
-const qf = createQuokkaFetch();
-export default qf;
+const blazion = createBlazion();
+export default blazion;
