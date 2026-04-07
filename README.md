@@ -1,4 +1,4 @@
-# blazion
+# Blazion
 
 A lightweight, strictly-typed, zero-dependency fetch wrapper explicitly built for the `@quokkalabs.com` team. Designed for consistent, object-based API definitions.
 
