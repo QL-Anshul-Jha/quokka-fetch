@@ -1,4 +1,4 @@
-import { BlazionError } from './types';
+import { BlazionError } from '../utils';
 
 const MAX_RETRY_DELAY = 30000;
 

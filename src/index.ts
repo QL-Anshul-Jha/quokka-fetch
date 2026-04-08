@@ -1,11 +1,13 @@
-import { HttpMethod, ResponseType, BlazionErrorCode } from './utils/enums';
-import { FetchOptions, JSONValue, BlazionConfig, BlazionInterceptors, BlazionRequestConfig, InterceptedResponseData, BlazionCallable, BlazionRequestPayload, BlazionError } from './utils/types';
-import { buildQueryString, mergeHeaders, parseResponseBody, handleResponseError, resolvePayloadAndHeaders, getTimeoutController, resolveFinalSignal } from './utils/helpers';
-import { BlazionCache } from './utils/cache';
-import { executeWithRetry } from './utils/retry';
+import {
+  HttpMethod, ResponseType, BlazionErrorCode,
+  FetchOptions, JSONValue, BlazionConfig, BlazionInterceptors, BlazionRequestConfig, InterceptedResponseData, BlazionCallable, BlazionRequestPayload, BlazionError,
+  buildQueryString, mergeHeaders, parseResponseBody, handleResponseError, resolvePayloadAndHeaders, getTimeoutController, resolveFinalSignal, hasProgressCallbacks
+} from './utils';
+import { trackDownloadProgress, executeXhrWithUploadProgress, BlazionCache, executeWithRetry } from './features';
 
-export * from './utils/types';
-export * from './utils/enums';
+export * from './utils';
+
+
 
 // Default constants
 const DEFAULT_RETRY_COUNT = 0;
@@ -30,6 +32,9 @@ class BlazionInternal {
   };
 
   constructor(config?: BlazionConfig) {
+
+    if (config && hasProgressCallbacks(config)) console.warn('[Blazion] Progress handlers must be passed per-request, not at the instance level.');
+
     this.baseURL = config?.baseURL || '';
     this.defaultHeaders = config?.headers || {
       'Accept': 'application/json, text/plain, */*',
@@ -100,8 +105,19 @@ class BlazionInternal {
 
       try {
         // --- 8b. NETWORK EXECUTION ---
-        // Trigger execution via browser-level fetch API mapped to standardized formatting
-        const response = await fetch(finalUrl, { ...customOptions, headers, body: finalBody, signal: finalSignal });
+        let response: Response;
+        if (config.onUploadProgress && typeof XMLHttpRequest !== 'undefined') {
+          // XHR explicitly handles both upload streams natively alongside download bounds 
+          response = await executeXhrWithUploadProgress(finalUrl, { ...config, signal: finalSignal }, finalBody);
+        } else {
+          // Trigger execution via natively robust fetch API dynamically mapped
+          response = await fetch(finalUrl, { ...customOptions, headers, body: finalBody, signal: finalSignal });
+
+          if (config.onDownloadProgress) {
+            // Read HTTP buffer implicitly using interceptor streaming masks
+            response = trackDownloadProgress(response, config.onDownloadProgress);
+          }
+        }
         const expectedType = responseType || this.defaultResponseType;
 
         // --- 8c. RESPONSE PARSING & THROWING ---

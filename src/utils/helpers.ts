@@ -1,5 +1,5 @@
 import { BlazionErrorCode, ResponseType } from './enums';
-import { JSONValue, QueryParams, RequestPayload, BlazionRequestConfig, InterceptedResponseData, BlazionError } from './types';
+import { JSONValue, QueryParams, RequestPayload, BlazionRequestConfig, InterceptedResponseData, BlazionError, BlazionConfig } from './types';
 import { Response_Status_Code, getBodyStrategies, getSignalStrategies } from './conditions';
 
 // Building query params 
@@ -36,7 +36,7 @@ export const mergeHeaders = (defaultHeaders: HeadersInit, customHeaders?: Header
 
 // Parsing Response Body
 export const parseResponseBody = async (response: Response, expectedType: ResponseType): Promise<InterceptedResponseData> => {
-  const parsers: Record<string, (res: Response) => Promise<JSONValue | string | Blob | ArrayBuffer | FormData>> = {
+  const parsers: Record<string, (res: Response) => Promise<InterceptedResponseData>> = {
     [ResponseType.JSON]: (res) => res.json(),
     [ResponseType.TEXT]: (res) => res.text(),
     [ResponseType.BLOB]: (res) => res.blob(),
@@ -90,3 +90,7 @@ export const resolveFinalSignal = (timeout: number | undefined, customSignal: Ab
   const type = `${!!timeout}_${!!customSignal}`;
   return getSignalStrategies(customSignal, controller, timeoutSignal)[type]();
 };
+
+// Checks if user has passed onUploadProgress or onDownloadProgress to instance
+export const hasProgressCallbacks = (config: BlazionConfig): boolean =>
+  ['onUploadProgress', 'onDownloadProgress'].some(key => key in config);

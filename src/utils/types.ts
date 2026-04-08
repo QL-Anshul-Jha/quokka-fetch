@@ -10,6 +10,12 @@ export type QueryParams = Record<string, string | number | boolean | null | unde
 // **BodyInit** is the **complete union type** for **all valid fetch` request bodies**
 export type RequestPayload = JSONValue | BodyInit | null;
 
+export interface ProgressEventData {
+  loaded: number;
+  total: number;
+  progress: number;
+}
+
 export interface BlazionFeatureOptions {
   retry?: number;
   retryDelay?: number;
@@ -17,8 +23,15 @@ export interface BlazionFeatureOptions {
   qCacheTime?: number;
 }
 
+export interface BlazionProgressOptions {
+  onUploadProgress?: (event: ProgressEventData) => void;
+  onDownloadProgress?: (event: ProgressEventData) => void;
+}
+
 // Used for overriding individual request options
-export type FetchOptions = Omit<RequestInit, 'method' | 'body'> & BlazionFeatureOptions & {
+export type FetchOptions = Omit<RequestInit, 'method' | 'body'> & 
+  BlazionFeatureOptions & 
+  BlazionProgressOptions & {
   method?: HttpMethod;
   query?: QueryParams;
   body?: RequestPayload;
@@ -30,7 +43,7 @@ export interface BlazionRequestConfig extends FetchOptions {
   url: string;
 }
 
-export type InterceptedResponseData = JSONValue | Blob | ArrayBuffer | FormData | string;
+export type InterceptedResponseData = JSONValue | BodyInit;
 
 export interface BlazionInterceptors {
   request: Array<(config: BlazionRequestConfig) => BlazionRequestConfig | Promise<BlazionRequestConfig>>;

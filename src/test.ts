@@ -1,5 +1,7 @@
 /* eslint-disable no-console */
+import assert from 'assert';
 import blazion, { HttpMethod, BlazionError, createBlazion } from './index';
+
 
 async function runTests() {
   console.log('🚀 TESTING BLAZION FEATURES...\n');
@@ -256,6 +258,79 @@ async function runTests() {
       }
     } catch (e) {
       console.log('❌ clearCache test failed:', e);
+    }
+
+    // 13. Form Data Parsing Mismatch Matcher
+    // When a payload is an Object but the user explictly specified application/x-www-form-urlencoded,
+    // the library should auto-convert the object to URLSearchParams under the hood.
+    console.log('\nTesting x-www-form-urlencoded Object formatting...');
+    try {
+      const rawApi = blazion;
+      const formResponse = await rawApi<{ form: Record<string, string> }>({
+        url: 'https://postman-echo.com/post',
+        method: HttpMethod.POST,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        payload: { platform: 'web', awesome: true }
+      });
+      
+      assert(formResponse.form.platform === 'web' && formResponse.form.awesome === 'true', 'Formatting algorithm failed to parse object dynamically into URL Encoded form data.');
+      console.log('✅ Form Data Auto-mapped successfully! Native Echo:', formResponse.form);
+    } catch(e) {
+      console.error('❌ Formatting Algorithm Test Failed', e);
+    }
+
+    // 14. Upload / Download Progress Interceptors
+    console.log('\nTesting Progress Trackers via Stream Interception...');
+    try {
+      let dlTicks = 0;
+      let upTicks = 0;
+      const progressApi = blazion;
+      
+      await progressApi({
+        url: 'https://postman-echo.com/post',
+        method: HttpMethod.POST,
+        payload: { massive: 'X'.repeat(500000) },
+        onUploadProgress: (e) => {
+          upTicks++;
+          assert(e.progress >= 0 && e.progress <= 1, 'Upload progression bounded between 0 and 1 violated');
+        },
+        onDownloadProgress: (e) => {
+          dlTicks++;
+          assert(e.progress >= 0, 'Download progress violated');
+        }
+      });
+
+      assert(upTicks > 0, 'Upload progress callback not hit');
+      assert(dlTicks > 0, 'Download progress callback not hit');
+      console.log(`✅ Upload/Download Tracking executed beautifully (UP_TICKS: ${upTicks}, DL_TICKS: ${dlTicks})`);
+    } catch(e) {
+      console.error('❌ Progress Tracking Test Failed', e);
+    }
+
+    // 15. Header Merging & Case Sensitivity Case
+    console.log('\nTesting Header Merging, Overrides, and Case-Insensitivity...');
+    try {
+      const headerApi = createBlazion({
+        headers: { 'X-Global-Header': 'global', 'X-Override': 'replace-me' }
+      });
+
+      const echo = await headerApi<{ headers: Record<string, string> }>({
+        url: 'https://postman-echo.com/get',
+        headers: { 'X-OVERRIDE': 'success', 'X-Local-Header': 'local' }
+      });
+
+      const h = echo.headers;
+      
+      // Verification: 'x-override' should exist only once with value 'success'
+      // Global header should be present
+      // Local header should be present
+      assert(h['x-global-header'] === 'global', 'Global header lost');
+      assert(h['x-override'] === 'success', 'Header override failed or case collision occurred');
+      assert(h['x-local-header'] === 'local', 'Local header lost');
+      
+      console.log('✅ Headers merged, overridden, and case-normalized correctly!');
+    } catch(e) {
+      console.error('❌ Header Validation Test Failed', e);
     }
 
     console.log('\n🎉 ALL TESTS PASSED SUCCESSFULLY!');
