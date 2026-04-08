@@ -307,6 +307,32 @@ async function runTests() {
       console.error('❌ Progress Tracking Test Failed', e);
     }
 
+    // 15. Header Merging & Case Sensitivity Case
+    console.log('\nTesting Header Merging, Overrides, and Case-Insensitivity...');
+    try {
+      const headerApi = createBlazion({
+        headers: { 'X-Global-Header': 'global', 'X-Override': 'replace-me' }
+      });
+
+      const echo = await headerApi<{ headers: Record<string, string> }>({
+        url: 'https://postman-echo.com/get',
+        headers: { 'X-OVERRIDE': 'success', 'X-Local-Header': 'local' }
+      });
+
+      const h = echo.headers;
+      
+      // Verification: 'x-override' should exist only once with value 'success'
+      // Global header should be present
+      // Local header should be present
+      assert(h['x-global-header'] === 'global', 'Global header lost');
+      assert(h['x-override'] === 'success', 'Header override failed or case collision occurred');
+      assert(h['x-local-header'] === 'local', 'Local header lost');
+      
+      console.log('✅ Headers merged, overridden, and case-normalized correctly!');
+    } catch(e) {
+      console.error('❌ Header Validation Test Failed', e);
+    }
+
     console.log('\n🎉 ALL TESTS PASSED SUCCESSFULLY!');
   } catch (err) {
     console.error('❌ Unexpected Test Failure:', err);
