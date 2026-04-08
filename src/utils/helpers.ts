@@ -36,7 +36,7 @@ export const mergeHeaders = (defaultHeaders: HeadersInit, customHeaders?: Header
 
 // Parsing Response Body
 export const parseResponseBody = async (response: Response, expectedType: ResponseType): Promise<InterceptedResponseData> => {
-  const parsers: Record<string, (res: Response) => Promise<JSONValue | string | Blob | ArrayBuffer | FormData>> = {
+  const parsers: Record<string, (res: Response) => Promise<InterceptedResponseData>> = {
     [ResponseType.JSON]: (res) => res.json(),
     [ResponseType.TEXT]: (res) => res.text(),
     [ResponseType.BLOB]: (res) => res.blob(),

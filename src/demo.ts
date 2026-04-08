@@ -23,6 +23,9 @@ async function demo() {
     baseURL: 'https://jsonplaceholder.typicode.com',
   });
 
+  // SETUP 3: Raw API for Echo validation (No BaseURL)
+  const rawApi = createBlazion();
+
   // ----- CACHE DEMO (global config) -----
   console.log('--- CACHE (via config) ---');
   const t1 = Date.now();
@@ -92,10 +95,27 @@ async function demo() {
         console.log(`  Download Progress: ${(e.progress * 100).toFixed(0)}% (${e.loaded}/${e.total} bytes)`);
       }
     });
-    console.log('  ✅ Upload & Download Progress complete\n');
+    console.log('\n  ✅ Upload & Download Progress complete\n');
   } catch (e) {
     if (e instanceof Error) {
       console.log('❌ Progress test failed:', e);
+    }
+  }
+
+  // ----- FORM PARSERS DEMO -----
+  console.log('--- FORM PARSING (Object Payload + urlencoded Header Mismatch) ---');
+  try {
+    const formResponse = await rawApi<{ form: Record<string, string> }>({
+      url: 'https://postman-echo.com/post',
+      method: HttpMethod.POST,
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      payload: { name: 'blazion', fast: true, platform: 'web' }
+    });
+    console.log('  ✅ Automatically parsed as urlencoded form data successfully! Echoes:', formResponse.form);
+    console.log('');
+  } catch (e) {
+    if (e instanceof Error) {
+      console.log('❌ Form parsing failed:', e);
     }
   }
 

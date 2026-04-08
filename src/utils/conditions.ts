@@ -36,7 +36,13 @@ export const getBodyStrategies = (headers: Headers) => [
     action: (b: RequestPayload) => b as BodyInit
   },
 
-  // 2. Objects & Arrays (Auto-JSON)
+  // 2. Explict URL Encoded Formulation (Mismatch Handler)
+  {
+    match: (b: RequestPayload) => typeof b === 'object' && b !== null && headers.get('Content-Type')?.includes('application/x-www-form-urlencoded'),
+    action: (b: RequestPayload) => new URLSearchParams(b as Record<string, string>).toString()
+  },
+
+  // 3. Objects & Arrays (Auto-JSON)
   {
     match: (b: RequestPayload) => (typeof b === 'object' && b !== null) || Array.isArray(b) || typeof b === 'number' || typeof b === 'boolean' || b === null,
     action: (b: RequestPayload) => {
@@ -46,7 +52,7 @@ export const getBodyStrategies = (headers: Headers) => [
     }
   },
 
-  // 3. Strings with Content-Type Sniffing
+  // 4. Strings with Content-Type Sniffing
   {
     match: (b: RequestPayload) => typeof b === 'string',
     action: (b: RequestPayload) => {

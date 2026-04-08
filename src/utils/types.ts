@@ -43,7 +43,7 @@ export interface BlazionRequestConfig extends FetchOptions {
   url: string;
 }
 
-export type InterceptedResponseData = JSONValue | Blob | ArrayBuffer | FormData | string;
+export type InterceptedResponseData = JSONValue | BodyInit;
 
 export interface BlazionInterceptors {
   request: Array<(config: BlazionRequestConfig) => BlazionRequestConfig | Promise<BlazionRequestConfig>>;
