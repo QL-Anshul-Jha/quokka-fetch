@@ -42,6 +42,12 @@ apiHeader
     console.error("Global API Error:", error.message);
   });
 
+// 3. Register Plugins (Optional features)
+import { RetryPlugin, CachePlugin } from 'blazion/plugins';
+
+apiHeader.use(RetryPlugin());
+apiHeader.use(CachePlugin());
+
 export default apiHeader;
 ```
 
@@ -120,3 +126,35 @@ interface User { name: string; }
 const data = await api<User>({ url: '/profile', method: 'GET' });
 // data is now correctly typed as User!
 ```
+
+---
+
+## 5. Plugins & Modular Features
+
+Blazion is modular. Advanced features are available via plugins to keep the core bundle size minimal.
+
+### **Registration**
+Register plugins once during instance setup:
+```typescript
+import { createBlazion } from 'blazion';
+import { RetryPlugin, CachePlugin, UploadPlugin, DownloadPlugin } from 'blazion/plugins';
+
+const api = createBlazion({ baseURL: '...' });
+
+api.use(RetryPlugin());   // Enables 'retry' and 'retryDelay'
+api.use(CachePlugin());   // Enables 'qCache' and 'qCacheTime'
+api.use(UploadPlugin());  // Enables 'onUploadProgress' (XHR-based)
+api.use(DownloadPlugin());// Enables 'onDownloadProgress' (Stream-based)
+```
+
+### **Usage**
+Once a plugin is registered, its options become available in your request configuration:
+```typescript
+await api({
+  url: '/users',
+  retry: 3,          // Retries 3 times on failure
+  qCache: true,       // Enables response caching
+  qCacheTime: 60000   // 1 minute TTL
+});
+```
+

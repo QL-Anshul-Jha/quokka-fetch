@@ -1,3 +1,4 @@
 export * from './cache';
 export * from './retry';
-export * from './progress';
+export * from './upload';
+export * from './download';

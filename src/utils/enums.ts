@@ -43,3 +43,10 @@ export enum BlazionErrorCode {
   BAD_GATEWAY = "BAD_GATEWAY",
   UNKNOWN = 'UNKNOWN_ERROR',
 }
+
+export enum BlazionPluginName {
+  CACHE = 'cache',
+  RETRY = 'retry',
+  UPLOAD = 'upload_progress',
+  DOWNLOAD = 'download_progress',
+}

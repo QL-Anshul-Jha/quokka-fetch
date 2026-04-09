@@ -4,6 +4,29 @@
   "description": "A lightweight fetch wrapper exclusively for @quokkalabs.com",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./plugins/cache": {
+      "types": "./dist/features/cache/index.d.ts",
+      "default": "./dist/features/cache/index.js"
+    },
+    "./plugins/retry": {
+      "types": "./dist/features/retry/index.d.ts",
+      "default": "./dist/features/retry/index.js"
+    },
+    "./plugins/upload": {
+      "types": "./dist/features/upload/index.d.ts",
+      "default": "./dist/features/upload/index.js"
+    },
+    "./plugins/download": {
+      "types": "./dist/features/download/index.d.ts",
+      "default": "./dist/features/download/index.js"
+    }
+  },
   "files": [
     "dist/**/*.js",
     "dist/**/*.d.ts",
@@ -16,6 +39,8 @@
     "prepare": "husky",
     "lint": "eslint src/ --max-warnings=0",
     "build": "npm run lint && tsc",
+    "prepack": "mv README.md _README.md || true",
+    "postpack": "mv _README.md README.md || true",
     "start": "node dist/test.js"
   },
   "devDependencies": {

@@ -1,0 +1,91 @@
+(node:33264) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+warn --- This is a deprecated method, please use runServer instead
+info --- config file  - /home/user/.config/verdaccio/config.yaml
+info --- plugin @verdaccio/local-storage successfully loaded (storage)
+info --- using htpasswd file: /home/user/.config/verdaccio/htpasswd
+info --- plugin verdaccio-htpasswd successfully loaded (authentication)
+info --- plugin verdaccio-audit successfully loaded (middleware)
+info --- plugin @verdaccio/ui-theme successfully loaded (theme)
+warn --- http address - http://0.0.0.0:4873/ - verdaccio/6.4.0
+info <-- 127.0.0.1 requested 'HEAD /'
+http <-- 200, user: null(127.0.0.1), req: 'HEAD /', bytes: 0/0
+http <-- 200, user: null(127.0.0.1), req: 'HEAD /', bytes: 0/0
+info <-- 127.0.0.1 requested 'HEAD /'
+http <-- 200, user: null(127.0.0.1), req: 'HEAD /', bytes: 0/0
+http <-- 200, user: null(127.0.0.1), req: 'HEAD /', bytes: 0/0
+info <-- 127.0.0.1 requested 'POST /-/v1/login'
+http <-- 200, user: null(127.0.0.1), req: 'POST /-/v1/login', bytes: 15/0
+http <-- 404, user: null(127.0.0.1), req: 'POST /-/v1/login', bytes: 15/150
+info <-- 127.0.0.1 requested 'PUT /-/user/org.couchdb.user:ql-anshul-jha'
+http <-- 200, user: null(127.0.0.1), req: 'PUT /-/user/org.couchdb.user:ql-anshul-jha', bytes: 185/0
+http <-- 201, user: ql-anshul-jha(127.0.0.1), req: 'PUT /-/user/org.couchdb.user:ql-anshul-jha', bytes: 185/174
+info <-- 127.0.0.1 requested 'GET /'
+http <-- 304, user: null(127.0.0.1), req: 'GET /', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/runtime.b352c37f52242992f0af.js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/runtime.b352c37f52242992f0af.js', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/vendors.b352c37f52242992f0af.js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/vendors.b352c37f52242992f0af.js', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/runtime.b352c37f52242992f0af.js', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/vendors.b352c37f52242992f0af.js', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/main.b352c37f52242992f0af.js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/main.b352c37f52242992f0af.js', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/main.b352c37f52242992f0af.js', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/Home.b352c37f52242992f0af.js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/Home.b352c37f52242992f0af.js', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/Home.b352c37f52242992f0af.js', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/verdaccio/data/packages'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/verdaccio/data/packages', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /-/verdaccio/data/packages', bytes: 0/0
+info <-- 127.0.0.1 requested 'POST /-/verdaccio/sec/login'
+http <-- 200, user: null(127.0.0.1), req: 'POST /-/verdaccio/sec/login', bytes: 55/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'POST /-/verdaccio/sec/login', bytes: 55/381
+info <-- 127.0.0.1 requested 'GET /-/verdaccio/data/packages'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /-/verdaccio/data/packages', bytes: 0/0
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /-/verdaccio/data/packages', bytes: 0/0
+info <-- 127.0.0.1 requested 'PUT /blazion'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'PUT /blazion', bytes: 22603/0
+info --- making request: 'GET https://registry.npmjs.org/blazion'
+http --- 404, req: 'GET https://registry.npmjs.org/blazion' (streaming)
+http --- 404, req: 'GET https://registry.npmjs.org/blazion', bytes: 0/21
+http <-- 201, user: ql-anshul-jha(127.0.0.1), req: 'PUT /blazion', bytes: 22603/53
+info <-- 127.0.0.1 requested 'GET /'
+http <-- 304, user: null(127.0.0.1), req: 'GET /', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/runtime.b352c37f52242992f0af.js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/runtime.b352c37f52242992f0af.js', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/vendors.b352c37f52242992f0af.js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/vendors.b352c37f52242992f0af.js', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/main.b352c37f52242992f0af.js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/main.b352c37f52242992f0af.js', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/runtime.b352c37f52242992f0af.js', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/vendors.b352c37f52242992f0af.js', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/main.b352c37f52242992f0af.js', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/Home.b352c37f52242992f0af.js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/Home.b352c37f52242992f0af.js', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/Home.b352c37f52242992f0af.js', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/verdaccio/data/packages'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /-/verdaccio/data/packages', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/favicon.ico'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/favicon.ico', bytes: 0/0
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/favicon.ico', bytes: 0/2198
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /-/verdaccio/data/packages', bytes: 0/1536
+info <-- 127.0.0.1 requested 'GET /blazion/-/blazion-1.0.0.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /blazion/-/blazion-1.0.0.tgz', bytes: 0/0
+http <-- 200, user: null(127.0.0.1), req: 'GET /blazion/-/blazion-1.0.0.tgz', bytes: 0/12122
+info <-- 127.0.0.1 requested 'GET /-/static/Version.b352c37f52242992f0af.js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/Version.b352c37f52242992f0af.js', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/verdaccio/data/sidebar/blazion'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /-/verdaccio/data/sidebar/blazion', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/blazion'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/Version.b352c37f52242992f0af.js', bytes: 0/611
+http --- 404, req: 'GET https://registry.npmjs.org/blazion' (streaming)
+http --- 404, req: 'GET https://registry.npmjs.org/blazion', bytes: 0/21
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /-/verdaccio/data/sidebar/blazion', bytes: 0/1810
+info <-- 127.0.0.1 requested 'GET /-/verdaccio/data/package/readme/blazion'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /-/verdaccio/data/package/readme/blazion', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/blazion'
+http --- 404, req: 'GET https://registry.npmjs.org/blazion' (streaming)
+http --- 404, req: 'GET https://registry.npmjs.org/blazion', bytes: 0/21
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /-/verdaccio/data/package/readme/blazion', bytes: 0/1991

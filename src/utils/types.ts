@@ -1,4 +1,4 @@
-import { HttpMethod, ResponseType, BlazionErrorCode } from './enums';
+import { HttpMethod, ResponseType, BlazionErrorCode, BlazionPluginName } from './enums';
 
 export type JSONPrimitive = string | number | boolean | null;
 export type JSONObject = { [key: string]: JSONValue };
@@ -16,28 +16,17 @@ export interface ProgressEventData {
   progress: number;
 }
 
-export interface BlazionFeatureOptions {
-  retry?: number;
-  retryDelay?: number;
-  qCache?: boolean;
-  qCacheTime?: number;
-}
+export interface BlazionPluginConfig { } // eslint-disable-line @typescript-eslint/no-empty-object-type
+export interface BlazionPluginIndividualRequestConfig { } // eslint-disable-line @typescript-eslint/no-empty-object-type
 
-export interface BlazionProgressOptions {
-  onUploadProgress?: (event: ProgressEventData) => void;
-  onDownloadProgress?: (event: ProgressEventData) => void;
-}
-
-// Used for overriding individual request options
-export type FetchOptions = Omit<RequestInit, 'method' | 'body'> & 
-  BlazionFeatureOptions & 
-  BlazionProgressOptions & {
-  method?: HttpMethod;
-  query?: QueryParams;
-  body?: RequestPayload;
-  timeout?: number;
-  responseType?: ResponseType;
-};
+export type FetchOptions = Omit<RequestInit, 'method' | 'body'> &
+  BlazionPluginIndividualRequestConfig & {
+    method?: HttpMethod;
+    query?: QueryParams;
+    body?: RequestPayload;
+    timeout?: number;
+    responseType?: ResponseType;
+  };
 
 export interface BlazionRequestConfig extends FetchOptions {
   url: string;
@@ -52,11 +41,24 @@ export interface BlazionInterceptors {
 }
 
 // Used for initializing the Blazion instance : Config
-export interface BlazionConfig extends BlazionFeatureOptions {
-  baseURL?: string;
+export interface BlazionConfig extends BlazionPluginConfig {
+  baseURL: string;
   headers?: HeadersInit;
   responseType?: ResponseType;
   timeout?: number;
+}
+
+export interface BlazionPlugin {
+  name: BlazionPluginName;
+  install(instance: BlazionInternalPublic): void;
+}
+
+export interface BlazionInternalPublic {
+  config: BlazionConfig;
+  interceptors: BlazionInterceptors;
+  engineAdapter?: (url: string, config: BlazionRequestConfig, body: BodyInit | null | undefined, rootFetch: typeof fetch) => Promise<Response>;
+  executionWrapper?: <T = InterceptedResponseData>(executor: () => Promise<T>, config: BlazionRequestConfig) => Promise<T>;
+  clearCacheFn?: () => void;
 }
 
 export interface BlazionRequestPayload extends Omit<FetchOptions, 'method' | 'body'> {
@@ -76,6 +78,12 @@ export interface BlazionCallable {
 
   // Cache Management
   clearCache(): void;
+
+  // Plugin System
+  use(plugin: BlazionPlugin): this;
+
+  // Instance Creation
+  create(config: BlazionConfig): BlazionCallable;
 }
 
 export interface BlazionErrorParams {

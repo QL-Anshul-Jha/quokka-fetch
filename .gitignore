@@ -3,3 +3,7 @@ dist/
 .env
 .npm
 *.tgz
+src/test.ts
+src/demo.ts
+verdaccio.log
+.npmrc

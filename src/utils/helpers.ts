@@ -1,5 +1,5 @@
 import { BlazionErrorCode, ResponseType } from './enums';
-import { JSONValue, QueryParams, RequestPayload, BlazionRequestConfig, InterceptedResponseData, BlazionError, BlazionConfig } from './types';
+import { JSONValue, QueryParams, RequestPayload, BlazionRequestConfig, InterceptedResponseData, BlazionError } from './types';
 import { Response_Status_Code, getBodyStrategies, getSignalStrategies } from './conditions';
 
 // Building query params 
@@ -91,6 +91,4 @@ export const resolveFinalSignal = (timeout: number | undefined, customSignal: Ab
   return getSignalStrategies(customSignal, controller, timeoutSignal)[type]();
 };
 
-// Checks if user has passed onUploadProgress or onDownloadProgress to instance
-export const hasProgressCallbacks = (config: BlazionConfig): boolean =>
-  ['onUploadProgress', 'onDownloadProgress'].some(key => key in config);
+

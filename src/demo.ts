@@ -1,6 +1,11 @@
 /* eslint-disable no-console */
-/* eslint-disable no-console */
-import { HttpMethod, BlazionError, createBlazion } from './index';
+import blazion, { HttpMethod, BlazionError, createBlazion } from './index';
+import { CachePlugin, RetryPlugin, UploadPlugin, DownloadPlugin } from './features';
+
+blazion.use(CachePlugin());
+blazion.use(RetryPlugin());
+blazion.use(UploadPlugin());
+blazion.use(DownloadPlugin());
 
 async function demo() {
   console.log('🚀 BLAZION DEMO\n');

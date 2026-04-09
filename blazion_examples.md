@@ -8,6 +8,14 @@ Every feature, every scenario.
 
 ```ts
 import qf, { createBlazion, HttpMethod, ResponseType, BlazionError } from 'blazion';
+import { RetryPlugin, CachePlugin, UploadPlugin, DownloadPlugin } from 'blazion/plugins';
+
+const api = createBlazion({ baseURL: '...' });
+api.use(RetryPlugin());
+api.use(CachePlugin());
+api.use(UploadPlugin());
+api.use(DownloadPlugin());
+
 
 // ━━━ Default instance (zero config) ━━━
 qf({ url: 'https://api.example.com/users' });
