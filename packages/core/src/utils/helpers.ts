@@ -2,7 +2,7 @@ import { BlazionErrorCode, ResponseType } from './enums';
 import { JSONValue, QueryParams, RequestPayload, BlazionRequestConfig, InterceptedResponseData, BlazionError } from './types';
 import { Response_Status_Code, getBodyStrategies, getSignalStrategies } from './conditions';
 
-// Building query params 
+// Build query string
 export const buildQueryString = (query?: QueryParams): string => {
   if (!query) return '';
 
@@ -24,7 +24,7 @@ export const buildQueryString = (query?: QueryParams): string => {
   ).toString();
 };
 
-// handling Default And Custom Headers
+// Merge default + custom headers
 export const mergeHeaders = (defaultHeaders: HeadersInit, customHeaders?: HeadersInit): Record<string, string> => {
   const merged = new Headers(defaultHeaders);
   const custom = new Headers(customHeaders);
@@ -34,7 +34,7 @@ export const mergeHeaders = (defaultHeaders: HeadersInit, customHeaders?: Header
   return headers;
 };
 
-// Parsing Response Body
+// Parse response body
 export const parseResponseBody = async (response: Response, expectedType: ResponseType): Promise<InterceptedResponseData> => {
   const parsers: Record<string, (res: Response) => Promise<InterceptedResponseData>> = {
     [ResponseType.JSON]: (res) => res.json(),
@@ -47,7 +47,7 @@ export const parseResponseBody = async (response: Response, expectedType: Respon
   return await (parsers[expectedType] || parsers[ResponseType.JSON])(response);
 };
 
-// Error Handling Logic
+// Handle non-OK responses
 export const handleResponseError = (response: Response, expectedType: ResponseType, data: InterceptedResponseData, config: BlazionRequestConfig): void => {
   if (!response.ok) {
     const message = `[QF Error] ${response.status} ${response.statusText}`;
@@ -70,7 +70,7 @@ export const handleResponseError = (response: Response, expectedType: ResponseTy
   }
 };
 
-// Handling Content Type
+// Resolve body + content-type
 export const resolvePayloadAndHeaders = (rawBody: RequestPayload | undefined | null, headers: Headers): BodyInit | null | undefined => {
   const bodyStrategies = getBodyStrategies(headers);
   return (rawBody !== undefined)
@@ -78,14 +78,14 @@ export const resolvePayloadAndHeaders = (rawBody: RequestPayload | undefined | n
     : undefined;
 };
 
-// Controller Management
+// Create timeout controller
 export const getTimeoutController = (timeout?: number) => {
   const controller = timeout ? new AbortController() : undefined;
   const timeoutId = timeout ? setTimeout(() => controller?.abort(), timeout) : undefined;
   return { controller, timeoutSignal: controller?.signal, timeoutId };
 };
 
-// Signal Resolution Mapping
+// Resolve final abort signal
 export const resolveFinalSignal = (timeout: number | undefined, customSignal: AbortSignal | null | undefined, controller: AbortController | undefined, timeoutSignal: AbortSignal | undefined): AbortSignal | undefined | null => {
   const type = `${!!timeout}_${!!customSignal}`;
   return getSignalStrategies(customSignal, controller, timeoutSignal)[type]();

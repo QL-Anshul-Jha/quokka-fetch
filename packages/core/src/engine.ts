@@ -91,7 +91,7 @@ export class BlazionInternal implements BlazionInternalPublic {
         if (e instanceof BlazionError) throw e;
 
         const error = e as Error;
-        let code = BlazionErrorCode.NETWORK_ERROR;
+        let code: BlazionErrorCode = BlazionErrorCode.NETWORK_ERROR;
         let message = error.message;
 
         if (error.name === 'AbortError') {
