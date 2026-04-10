@@ -1,4 +1,4 @@
-import { BlazionPlugin, BlazionPluginName, BlazionInternalPublic } from '../../utils';
+import { BlazionPlugin, BlazionPluginName, BlazionInternalPublic, BlazionRequestConfig } from '@blazion/core';
 import { trackDownloadProgress } from './helpers';
 import './types'; // Ensure module augmentation is loaded
 
@@ -10,7 +10,7 @@ export const DownloadPlugin = (): BlazionPlugin => {
 
       const currentAdapter = instance.engineAdapter;
 
-      instance.engineAdapter = async (url, config, body, defaultFetch) => {
+      instance.engineAdapter = async (url: string, config: BlazionRequestConfig, body: BodyInit | null | undefined, defaultFetch: typeof fetch) => {
         let response: Response;
         if (currentAdapter) {
           response = await currentAdapter(url, config, body, defaultFetch);

@@ -7,8 +7,11 @@ Every feature, every scenario.
 ## 1. Instance Creation ([createBlazion](file:///home/user/Work/blazion/src/index.ts#169-204))
 
 ```ts
-import qf, { createBlazion, HttpMethod, ResponseType, BlazionError } from 'blazion';
-import { RetryPlugin, CachePlugin, UploadPlugin, DownloadPlugin } from 'blazion/plugins';
+import qf, { createBlazion, HttpMethod, ResponseType, BlazionError } from '@blazion/core';
+import { RetryPlugin } from '@blazion/plugin-retry';
+import { CachePlugin } from '@blazion/plugin-cache';
+import { UploadPlugin } from '@blazion/plugin-upload-progress';
+import { DownloadPlugin } from '@blazion/plugin-download-progress';
 
 const api = createBlazion({ baseURL: '...' });
 api.use(RetryPlugin());
@@ -420,7 +423,7 @@ try {
 
 ```ts
 // ━━━━ src/lib/api.ts ━━━━
-import { createBlazion, BlazionError, HttpMethod } from 'blazion';
+import { createBlazion, BlazionError, HttpMethod } from '@blazion/core';
 
 // Types
 interface PaginatedResponse<T> {

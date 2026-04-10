@@ -1,4 +1,4 @@
-import { BlazionRequestConfig } from '../../utils';
+import { BlazionRequestConfig } from '@blazion/core';
 
 export const trackDownloadProgress = (
   response: Response,

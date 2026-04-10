@@ -1,0 +1,25 @@
+{
+  "name": "@blazion/plugin-retry",
+  "version": "1.0.0",
+  "description": "Retry plugin for Blazion — automatic retries with exponential backoff",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
+  "keywords": ["blazion", "retry", "fetch", "exponential-backoff", "plugin"],
+  "peerDependencies": {
+    "@blazion/core": ">=1.0.0"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}

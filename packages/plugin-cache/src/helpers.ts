@@ -1,4 +1,4 @@
-import { CacheEntry, InterceptedResponseData } from '../../utils';
+import { CacheEntry, InterceptedResponseData } from '@blazion/core';
 import './types';
 
 // In-memory cache with TTL-based expiry

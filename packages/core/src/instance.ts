@@ -35,7 +35,11 @@ export function createBlazion(config: BlazionConfig): BlazionCallable {
       instance.clearCache();
     },
     use: (plugin: BlazionPlugin) => {
+      if (instance.installedPlugins.has(plugin.name)) {
+        throw new Error(`[Blazion] Plugin "${plugin.name}" is already registered. Each plugin can only be installed once per instance.`);
+      }
       plugin.install(instance);
+      instance.installedPlugins.add(plugin.name);
       return finalCallable as never;
     },
     create: (config: BlazionConfig) => createBlazion(config)

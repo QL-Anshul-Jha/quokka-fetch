@@ -42,7 +42,7 @@ export interface BlazionInterceptors {
 
 // Used for initializing the Blazion instance : Config
 export interface BlazionConfig extends BlazionPluginConfig {
-  baseURL: string;
+  baseURL?: string;
   headers?: HeadersInit;
   responseType?: ResponseType;
   timeout?: number;
@@ -59,6 +59,7 @@ export interface BlazionInternalPublic {
   engineAdapter?: (url: string, config: BlazionRequestConfig, body: BodyInit | null | undefined, rootFetch: typeof fetch) => Promise<Response>;
   executionWrapper?: <T = InterceptedResponseData>(executor: () => Promise<T>, config: BlazionRequestConfig) => Promise<T>;
   clearCacheFn?: () => void;
+  readonly installedPlugins: Set<string>;
 }
 
 export interface BlazionRequestPayload extends Omit<FetchOptions, 'method' | 'body'> {

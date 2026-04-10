@@ -1,4 +1,4 @@
-declare module '../../utils/types' {
+declare module '@blazion/core' {
   interface BlazionPluginConfig {
     retry?: number;
     retryDelay?: number;

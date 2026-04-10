@@ -1,47 +1,14 @@
 {
-  "name": "blazion",
-  "version": "1.0.0",
-  "description": "A lightweight fetch wrapper exclusively for @quokkalabs.com",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "sideEffects": false,
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    },
-    "./plugins/cache": {
-      "types": "./dist/features/cache/index.d.ts",
-      "default": "./dist/features/cache/index.js"
-    },
-    "./plugins/retry": {
-      "types": "./dist/features/retry/index.d.ts",
-      "default": "./dist/features/retry/index.js"
-    },
-    "./plugins/upload": {
-      "types": "./dist/features/upload/index.d.ts",
-      "default": "./dist/features/upload/index.js"
-    },
-    "./plugins/download": {
-      "types": "./dist/features/download/index.d.ts",
-      "default": "./dist/features/download/index.js"
-    }
-  },
-  "files": [
-    "dist/**/*.js",
-    "dist/**/*.d.ts",
-    "scripts/preinstall.js",
-    "!dist/test.*",
-    "!dist/demo.*"
+  "private": true,
+  "workspaces": [
+    "packages/*"
   ],
   "scripts": {
     "preinstall": "node scripts/preinstall.js",
     "prepare": "husky",
-    "lint": "eslint src/ --max-warnings=0",
-    "build": "npm run lint && tsc",
-    "prepack": "mv README.md _README.md || true",
-    "postpack": "mv _README.md README.md || true",
-    "start": "node dist/test.js"
+    "lint": "npm run lint --workspaces",
+    "build": "npm run build --workspaces",
+    "start": "node packages/core/dist/test.js"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",

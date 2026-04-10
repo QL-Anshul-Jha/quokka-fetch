@@ -1,4 +1,4 @@
-import { HttpMethod, InterceptedResponseData, BlazionPlugin, BlazionPluginName, BlazionInternalPublic, BlazionRequestConfig } from '../../utils';
+import { HttpMethod, InterceptedResponseData, BlazionPlugin, BlazionPluginName, BlazionInternalPublic, BlazionRequestConfig } from '@blazion/core';
 import { CacheOptions } from './types';
 import { BlazionCache } from './helpers';
 

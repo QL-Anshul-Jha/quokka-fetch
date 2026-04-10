@@ -1,6 +1,6 @@
-import { ProgressEventData } from '../../utils';
+import { ProgressEventData } from '@blazion/core';
 
-declare module '../../utils/types' {
+declare module '@blazion/core' {
   interface BlazionPluginIndividualRequestConfig {
     onUploadProgress?: (event: ProgressEventData) => void;
   }

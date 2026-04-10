@@ -1,4 +1,4 @@
-import { BlazionPlugin, BlazionPluginName, BlazionInternalPublic } from '../../utils';
+import { BlazionRequestConfig, BlazionPlugin, BlazionPluginName, BlazionInternalPublic } from '@blazion/core';
 import { executeXhrWithUploadProgress } from './helpers';
 import './types'; // Ensure module augmentation is loaded
 
@@ -10,7 +10,7 @@ export const UploadPlugin = (): BlazionPlugin => {
 
       const currentAdapter = instance.engineAdapter;
 
-      instance.engineAdapter = async (url, config, body, defaultFetch) => {
+      instance.engineAdapter = async (url: string, config: BlazionRequestConfig, body: BodyInit | null | undefined, defaultFetch: typeof fetch) => {
         if (config.onUploadProgress) {
           return await executeXhrWithUploadProgress(url, config, body);
         }

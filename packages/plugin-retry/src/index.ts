@@ -1,4 +1,4 @@
-import { BlazionPlugin, BlazionPluginName, BlazionInternalPublic, BlazionRequestConfig, InterceptedResponseData } from '../../utils';
+import { BlazionPlugin, BlazionPluginName, BlazionInternalPublic, BlazionRequestConfig, InterceptedResponseData } from '@blazion/core';
 import { RetryOptions } from './types';
 import { executeWithRetry } from './helpers';
 

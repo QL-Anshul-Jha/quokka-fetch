@@ -1,0 +1,25 @@
+{
+  "name": "@blazion/plugin-cache",
+  "version": "1.0.0",
+  "description": "Cache plugin for Blazion — in-memory response caching with TTL",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
+  "keywords": ["blazion", "cache", "fetch", "ttl", "plugin"],
+  "peerDependencies": {
+    "@blazion/core": ">=1.0.0"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}

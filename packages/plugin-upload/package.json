@@ -1,0 +1,25 @@
+{
+  "name": "@blazion/plugin-upload-progress",
+  "version": "1.0.0",
+  "description": "Upload progress plugin for Blazion — XHR-based upload tracking",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
+  "keywords": ["blazion", "upload", "progress", "xhr", "plugin"],
+  "peerDependencies": {
+    "@blazion/core": ">=1.0.0"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}

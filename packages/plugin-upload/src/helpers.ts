@@ -1,4 +1,4 @@
-import { BlazionErrorCode, BlazionError, BlazionRequestConfig, ProgressEventData } from '../../utils';
+import { BlazionErrorCode, BlazionError, BlazionRequestConfig, ProgressEventData } from '@blazion/core';
 
 export const executeXhrWithUploadProgress = (
   url: string,

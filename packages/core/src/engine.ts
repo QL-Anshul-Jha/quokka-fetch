@@ -11,6 +11,7 @@ export class BlazionInternal implements BlazionInternalPublic {
   public engineAdapter?: (url: string, config: BlazionRequestConfig, body: BodyInit | null | undefined, rootFetch: typeof fetch) => Promise<Response>;
   public executionWrapper?: <T = InterceptedResponseData>(executor: () => Promise<T>, config: BlazionRequestConfig) => Promise<T>;
   public clearCacheFn?: () => void;
+  public readonly installedPlugins = new Set<string>();
 
   public interceptors: BlazionInterceptors = {
     request: [],
@@ -94,8 +95,12 @@ export class BlazionInternal implements BlazionInternalPublic {
         let message = error.message;
 
         if (error.name === 'AbortError') {
-          code = finalTimeout ? BlazionErrorCode.TIMEOUT : BlazionErrorCode.ABORT;
-          message = finalTimeout ? `Request timed out after ${finalTimeout}ms` : 'Request was manually aborted';
+          // Distinguish timeout abort vs manual abort:
+          // If we have a timeout controller and it was the one that aborted, it's a timeout.
+          // Otherwise, the user manually aborted via their own signal.
+          const isTimeoutAbort = controller && controller.signal.aborted;
+          code = isTimeoutAbort ? BlazionErrorCode.TIMEOUT : BlazionErrorCode.ABORT;
+          message = isTimeoutAbort ? `Request timed out after ${finalTimeout}ms` : 'Request was manually aborted';
         }
 
         const qfError = new BlazionError({
