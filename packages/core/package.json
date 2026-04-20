@@ -1,6 +1,6 @@
 {
   "name": "@blazion/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Core engine for Blazion — a lightweight, strictly-typed fetch wrapper",
   "main": "dist/index.cjs",
   "types": "dist/index.d.ts",
@@ -30,6 +30,7 @@
   ],
   "scripts": {
     "build": "tsc --build && tsup",
+    "prepublishOnly": "npm run build",
     "lint": "eslint src --fix"
   },
   "devDependencies": {

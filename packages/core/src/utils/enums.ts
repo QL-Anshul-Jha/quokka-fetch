@@ -57,4 +57,5 @@ export const BlazionPluginName = {
   UPLOAD: 'upload_progress',
   DOWNLOAD: 'download_progress',
 } as const;
+
 export type BlazionPluginName = (typeof BlazionPluginName)[keyof typeof BlazionPluginName];
