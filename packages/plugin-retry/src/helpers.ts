@@ -2,12 +2,35 @@ import { BlazionError } from '@blazion/core';
 
 const MAX_RETRY_DELAY = 30000;
 
-// Execute with exponential backoff
+// Abortable sleep helper
+const sleep = (ms: number, signal?: AbortSignal | null): Promise<void> => {
+  return new Promise<void>((resolve, reject) => {
+    // If the signal was already aborted before we started, fail immediately.
+    if (signal?.aborted) return reject(signal.reason);
+
+    // Start a timer that will resolve the Promise after the given delay.
+    const timer = setTimeout(resolve, ms);
+
+    // If an AbortSignal is provided, listen for abort events.
+    signal?.addEventListener(
+      'abort',
+      () => {
+        // Stop the timer so it does not resolve later. with promise rejection
+        clearTimeout(timer);
+        reject(signal.reason);
+      },
+      { once: true }
+    );
+  });
+};
+
+// Execute recursion with backoff
 export const executeWithRetry = async <T>(
   fn: () => Promise<T>,
   retryCount: number,
   retryDelay: number,
-  backoff: 'fixed' | 'exponential' = 'exponential'
+  backoff: 'fixed' | 'exponential' = 'exponential',
+  signal?: AbortSignal | null // Support null from config
 ): Promise<T> => {
   // --- 1. RETRY LOOP ---
   let lastError: BlazionError | Error | null = null;
@@ -18,23 +41,23 @@ export const executeWithRetry = async <T>(
     } catch (e) {
       lastError = e as BlazionError | Error;
 
-      // If the error is a BlazionError, only retry if it's retryable
+      // Fail early if error is not retryable
       if (lastError instanceof BlazionError && !lastError.retryable) {
         throw lastError;
       }
 
-      // If we've exhausted all retries, throw
+      // Final attempt fail
       if (attempt === retryCount) throw lastError;
 
-      // Calculate delay based on strategy
+      // Calculate delay
       const delay = (backoff === 'exponential')
         ? Math.min(retryDelay * Math.pow(2, attempt), MAX_RETRY_DELAY)
         : retryDelay;
 
-      await new Promise(resolve => setTimeout(resolve, delay));
+      // Wait (abortable)
+      await sleep(delay, signal);
     }
   }
 
-  // This should never be reached, but TypeScript needs it
   throw lastError;
 };

@@ -23,7 +23,7 @@ export const RetryPlugin = (options?: RetryOptions): BlazionPlugin => {
           return currentWrapper ? (currentWrapper(executor, config) as Promise<T>) : executor();
         };
 
-        return executeWithRetry<T>(downstreamExecutor, maxRetries, delay, backoff);
+        return executeWithRetry<T>(downstreamExecutor, maxRetries, delay, backoff, config.signal);
       };
     }
   };

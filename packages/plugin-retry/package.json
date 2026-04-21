@@ -1,6 +1,6 @@
 {
   "name": "@blazion/plugin-retry",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Retry plugin for Blazion — automatic retries with exponential backoff",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

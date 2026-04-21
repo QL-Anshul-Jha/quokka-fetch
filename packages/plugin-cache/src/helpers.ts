@@ -5,16 +5,30 @@ import './types';
 export class BlazionCache {
   // --- 1. STORAGE ---
   private entries = new Map<string, CacheEntry>();
+  private inFlight = new Map<string, Promise<InterceptedResponseData>>(); // Tracks active requests
 
   // --- 2. KEY GENERATION ---
   generateKey(method: string, url: string, query?: Record<string, string | number | boolean | null | undefined>): string {
     const sortedQuery = query
       ? Object.keys(query).sort().map(k => `${k}=${query[k]}`).join('&')
       : '';
-    return `${method}:${url}${sortedQuery ? `?${sortedQuery}` : ''}`;
+    return `${method}::${url}${sortedQuery ? `?${sortedQuery}` : ''}`;
   }
 
-  // --- 3. DATA ACCESS ---
+  // --- 3. DEDUPLICATION ---
+  getInFlight(key: string): Promise<InterceptedResponseData> | undefined {
+    return this.inFlight.get(key);
+  }
+
+  setInFlight(key: string, promise: Promise<InterceptedResponseData>): void {
+    this.inFlight.set(key, promise);
+  }
+
+  deleteInFlight(key: string): void {
+    this.inFlight.delete(key);
+  }
+
+  // --- 4. DATA ACCESS ---
   get(key: string): InterceptedResponseData | undefined {
     const entry = this.entries.get(key);
     if (!entry) return undefined;
