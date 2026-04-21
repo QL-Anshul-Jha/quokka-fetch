@@ -9,6 +9,7 @@ export const RetryPlugin = (options?: RetryOptions): BlazionPlugin => {
     install(instance: BlazionInternalPublic) {
       const globalRetryCount = options?.globalRetry ?? instance.config.retry ?? 0;
       const globalRetryDelay = options?.globalRetryDelay ?? instance.config.retryDelay ?? 1000;
+      const globalBackoff = options?.backoff ?? instance.config.backoff ?? 'exponential';
 
       // --- 2. EXECUTION WRAPPER ---
       const currentWrapper = instance.executionWrapper;
@@ -16,12 +17,13 @@ export const RetryPlugin = (options?: RetryOptions): BlazionPlugin => {
       instance.executionWrapper = async <T = InterceptedResponseData>(executor: () => Promise<T>, config: BlazionRequestConfig): Promise<T> => {
         const maxRetries = config.retry ?? globalRetryCount;
         const delay = config.retryDelay ?? globalRetryDelay;
+        const backoff = config.backoff ?? globalBackoff;
 
         const downstreamExecutor = async (): Promise<T> => {
           return currentWrapper ? (currentWrapper(executor, config) as Promise<T>) : executor();
         };
 
-        return executeWithRetry<T>(downstreamExecutor, maxRetries, delay);
+        return executeWithRetry<T>(downstreamExecutor, maxRetries, delay, backoff);
       };
     }
   };

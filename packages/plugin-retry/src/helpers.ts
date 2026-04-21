@@ -6,7 +6,8 @@ const MAX_RETRY_DELAY = 30000;
 export const executeWithRetry = async <T>(
   fn: () => Promise<T>,
   retryCount: number,
-  retryDelay: number
+  retryDelay: number,
+  backoff: 'fixed' | 'exponential' = 'exponential'
 ): Promise<T> => {
   // --- 1. RETRY LOOP ---
   let lastError: BlazionError | Error | null = null;
@@ -25,8 +26,11 @@ export const executeWithRetry = async <T>(
       // If we've exhausted all retries, throw
       if (attempt === retryCount) throw lastError;
 
-      // Exponential backoff: delay * 2^attempt, capped at MAX_RETRY_DELAY
-      const delay = Math.min(retryDelay * Math.pow(2, attempt), MAX_RETRY_DELAY);
+      // Calculate delay based on strategy
+      const delay = (backoff === 'exponential')
+        ? Math.min(retryDelay * Math.pow(2, attempt), MAX_RETRY_DELAY)
+        : retryDelay;
+
       await new Promise(resolve => setTimeout(resolve, delay));
     }
   }
