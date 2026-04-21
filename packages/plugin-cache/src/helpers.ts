@@ -1,10 +1,12 @@
-import { InterceptedResponseData, CacheEntry } from '../utils';
+import { CacheEntry, InterceptedResponseData } from '@blazion/core';
+import './types';
 
-// In-memory cache with TTL-based expiry
+// In-memory cache with TTL
 export class BlazionCache {
+  // --- 1. STORAGE ---
   private entries = new Map<string, CacheEntry>();
 
-  // Generate a deterministic cache key from request params
+  // --- 2. KEY GENERATION ---
   generateKey(method: string, url: string, query?: Record<string, string | number | boolean | null | undefined>): string {
     const sortedQuery = query
       ? Object.keys(query).sort().map(k => `${k}=${query[k]}`).join('&')
@@ -12,7 +14,7 @@ export class BlazionCache {
     return `${method}:${url}${sortedQuery ? `?${sortedQuery}` : ''}`;
   }
 
-  // Get cached data (returns undefined if expired or missing)
+  // --- 3. DATA ACCESS ---
   get(key: string): InterceptedResponseData | undefined {
     const entry = this.entries.get(key);
     if (!entry) return undefined;
@@ -26,7 +28,7 @@ export class BlazionCache {
     return entry.data;
   }
 
-  // Store response data with a TTL
+  // --- 4. STORAGE OPS ---
   set(key: string, data: InterceptedResponseData, ttl: number): void {
     this.entries.set(key, { data, timestamp: Date.now(), ttl });
   }

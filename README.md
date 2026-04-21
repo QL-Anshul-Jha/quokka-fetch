@@ -1,122 +1,93 @@
-# Blazion
+# 🌌 Blazion
 
-A lightweight, strictly-typed, zero-dependency fetch wrapper explicitly built for the `@quokkalabs.com` team. Designed for consistent, object-based API definitions.
+**A tiny, strictly-typed, and zero-dependency fetch wrapper.**
 
-## 1. Installation
+Blazion is built for developers who want the power of Axios with the footprint of native `fetch`. It enforces consistent API definitions, provides a fluent lifecycle API, and offers a modular plugin system for advanced features like retries and caching.
 
-To install the package, simply run:
+[![Size](https://img.shields.io/badge/bundle--size-~8KB-blue?style=flat-square)](https://github.com/quokkalabs/blazion)
+[![TypeScript](https://img.shields.io/badge/types-Strict-blue?style=flat-square)](https://www.typescriptlang.org/)
+[![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
+
+---
+
+## ✨ Features
+
+- **⚡ Zero Dependency**: Uses native `fetch` and standard Web APIs.
+- **🛡️ Strictly Typed**: Integrated TypeScript types; no `any`, no `unknown`.
+- **🧩 Modular Plugins**: Pay-only-for-what-you-need (Retry, Cache, Progress).
+- **🌊 Fluent API**: Clean lifecycle hooks (`onRequest`, `onResponse`, `onError`).
+- **📦 Payload Auto-Detection**: Support for JSON, FormData, and Blobs out of the box.
+
+---
+
+## 🚀 Quick Start
+
+### 1. Installation
 ```bash
-npm install blazion
+npm install @blazion/core
 ```
-*(Note: You must have an `@quokkalabs.com` email configured in your `git config` to install this package).*
 
----
-
-## 2. Setting Up an Instance and Interceptors
-
-It's best practice to create a configured instance of the fetcher, apply your global interceptors, and export it for your app.
-
-Create a file called `api.ts`:
-
+### 2. Setup Instance
 ```typescript
-import { createBlazion, ResponseType } from 'blazion';
+import { createBlazion } from '@blazion/core';
 
-// 1. Create a custom instance with a base URL
-const apiHeader = createBlazion({
-  baseURL: 'https://api.quokkalabs.com/v1',
+const api = createBlazion({
+  baseURL: 'https://api.example.com/v1',
 });
 
-// 2. Add fluent event hooks!
-apiHeader
-  .onRequest((config) => {
-    const token = localStorage.getItem('user_token');
-    if (token) {
-      config.headers = { ...config.headers, Authorization: `Bearer ${token}` };
-    }
-    return config;
-  })
-  .onResponse((data, response) => {
-    return data;
-  })
-  .onError((error) => {
-    console.error("Global API Error:", error.message);
-  });
+// Add global headers or logic
+api.onRequest((config) => {
+  config.headers = { ...config.headers, Authorization: 'Bearer YOUR_TOKEN' };
+  return config;
+});
 
-export default apiHeader;
-```
-
----
-
-## 3. Standardized Usage (API Dictionary Pattern)
-
-To maintain 100% consistency, the library enforces a single `qf(apiObj)` pattern. This allows you to define your endpoints as objects in centralized files.
-
-#### **Step 1: Define your endpoints**
-```typescript
-// endpoints.ts
-import { HttpMethod } from 'blazion';
-
-export const UserEndpoints = {
-  GET_PROFILE: { 
-    url: "/user/profile", 
-    method: 'GET' 
-  },
-  UPDATE_PROFILE: { 
-    url: "/user/profile", 
-    method: 'PUT',
-    timeout: 5000 
-  },
-};
-```
-
-#### **Step 2: Use them in Components**
-```typescript
-import api from './api';
-import { UserEndpoints } from './endpoints';
-
-async function updateProfile(userData: any) {
-  try {
-    // Standardized object spreading
-    const user = await api({
-      ...UserEndpoints.UPDATE_PROFILE,
-      payload: userData, // Body content goes here
-      params: { force: true } // Query params (?force=true)
-    });
-    
-    console.log(`Updated ${user.name}`);
-  } catch (error) {
-    console.error("Update failed:", error.message);
-  }
-}
-```
-
----
-
-## 4. Features & Auto-Detection
-
-### **Automatic Content-Type Detection**
-`blazion` automatically detects your payload type to set the correct `Content-Type`:
-- **Generic Object** → `application/json`
-- **FormData** → `multipart/form-data`
-- **URLSearchParams** → `application/x-www-form-urlencoded`
-- **Blob/Binary** → Extracts native type or defaults to `text/plain`
-
-### **Custom Response Formats**
-Use `responseType` to dictate exactly what you want back:
-```typescript
-import { ResponseType } from 'blazion';
-
-const audioBlob = await api({
-  url: '/audio/track.mp3',
-  method: 'GET',
-  responseType: ResponseType.BLOB
+// Capture all errors globally (logging, analytics, etc.)
+api.onError((error) => {
+  console.error(`Request failed: ${error.url}`, error);
 });
 ```
 
-### **Strict Type Safety**
-The library is 100% strictly typed (No `any`, No `unknown`). Enforced via its internal architecture and linting tools.
+### 3. Make a Request
 ```typescript
-interface User { name: string; }
-const data = await api<User>({ url: '/profile', method: 'GET' });
-// data is now correctly typed as User!
+interface User { id: number; name: string; }
+
+const user = await api<User>({
+  url: '/users/1',
+  method: 'GET'
+});
+
+console.log(user.name); // Correctly typed!
 ```
+
+---
+
+## 🛠️ Advanced Features (Plugins)
+
+Extend Blazion with optional plugins:
+
+```typescript
+import { RetryPlugin } from '@blazion/plugin-retry';
+import { CachePlugin } from '@blazion/plugin-cache';
+
+api.use(RetryPlugin());
+api.use(CachePlugin());
+
+// Use plugin features in any request
+await api({
+  url: '/data',
+  retry: 3,         // Retry 3 times on failure
+  qCache: true,     // Enable 1-minute caching
+});
+```
+
+Check out [**blazion_examples.md**](./blazion_examples.md) for more complex scenarios.
+
+---
+
+## 🎯 Our Philosophy
+
+We believe in **"Consistency as a Service"**. By defining your endpoints as static objects and using a unified `api(config)` pattern, your codebase stays clean, predictable, and easy to audit.
+
+---
+
+&copy; 2026 Quokka Labs. Built with 💙 for the modern web.

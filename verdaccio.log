@@ -1,0 +1,1990 @@
+warn --- This is a deprecated method, please use runServer instead
+info --- config file  - /home/user/.config/verdaccio/config.yaml
+info --- plugin @verdaccio/local-storage successfully loaded (storage)
+info --- using htpasswd file: /home/user/.config/verdaccio/htpasswd
+info --- plugin verdaccio-htpasswd successfully loaded (authentication)
+info --- plugin verdaccio-audit successfully loaded (middleware)
+info --- plugin @verdaccio/ui-theme successfully loaded (theme)
+warn --- http address - http://localhost:4873/ - verdaccio/6.5.2
+info <-- 127.0.0.1 requested 'PUT /-/user/org.couchdb.user:testuser_1776682368401'
+http <-- 200, user: null(127.0.0.1), req: 'PUT /-/user/org.couchdb.user:testuser_1776682368401', bytes: 82/0
+http <-- 201, user: testuser_1776682368401(127.0.0.1), req: 'PUT /-/user/org.couchdb.user:testuser_1776682368401', bytes: 82/195
+info <-- 127.0.0.1 requested 'PUT /@blazion%2fplugin-cache'
+http <-- 200, user: testuser_1776682368401(127.0.0.1), req: 'PUT /@blazion%2fplugin-cache', bytes: 3692/0
+info --- making request: 'GET https://registry.npmjs.org/@blazion%2Fplugin-cache'
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fplugin-cache' (streaming)
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fplugin-cache', bytes: 0/21
+http <-- 201, user: testuser_1776682368401(127.0.0.1), req: 'PUT /@blazion%2fplugin-cache', bytes: 3692/53
+info <-- 127.0.0.1 requested 'PUT /@blazion%2fplugin-download-progress'
+http <-- 200, user: testuser_1776682368401(127.0.0.1), req: 'PUT /@blazion%2fplugin-download-progress', bytes: 3463/0
+info --- making request: 'GET https://registry.npmjs.org/@blazion%2Fplugin-download-progress'
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fplugin-download-progress' (streaming)
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fplugin-download-progress', bytes: 0/21
+http <-- 201, user: testuser_1776682368401(127.0.0.1), req: 'PUT /@blazion%2fplugin-download-progress', bytes: 3463/53
+info <-- 127.0.0.1 requested 'PUT /@blazion%2fplugin-retry'
+http <-- 200, user: testuser_1776682368401(127.0.0.1), req: 'PUT /@blazion%2fplugin-retry', bytes: 3334/0
+info --- making request: 'GET https://registry.npmjs.org/@blazion%2Fplugin-retry'
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fplugin-retry' (streaming)
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fplugin-retry', bytes: 0/21
+http <-- 201, user: testuser_1776682368401(127.0.0.1), req: 'PUT /@blazion%2fplugin-retry', bytes: 3334/53
+info <-- 127.0.0.1 requested 'PUT /@blazion%2fplugin-upload-progress'
+http <-- 200, user: testuser_1776682368401(127.0.0.1), req: 'PUT /@blazion%2fplugin-upload-progress', bytes: 4026/0
+info --- making request: 'GET https://registry.npmjs.org/@blazion%2Fplugin-upload-progress'
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fplugin-upload-progress' (streaming)
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fplugin-upload-progress', bytes: 0/21
+http <-- 201, user: testuser_1776682368401(127.0.0.1), req: 'PUT /@blazion%2fplugin-upload-progress', bytes: 4026/53
+info <-- 127.0.0.1 requested 'PUT /@blazion%2fplugin-download-progress'
+http <-- 200, user: testuser_1776681934858(127.0.0.1), req: 'PUT /@blazion%2fplugin-download-progress', bytes: 3463/0
+http <-- 409, user: testuser_1776681934858(127.0.0.1), req: 'PUT /@blazion%2fplugin-download-progress', error: this package is already present
+info <-- 127.0.0.1 requested 'PUT /@blazion%2fplugin-retry'
+http <-- 200, user: testuser_1776682368401(127.0.0.1), req: 'PUT /@blazion%2fplugin-retry', bytes: 3334/0
+http <-- 409, user: testuser_1776682368401(127.0.0.1), req: 'PUT /@blazion%2fplugin-retry', error: this package is already present
+info <-- 127.0.0.1 requested 'PUT /@blazion%2fplugin-upload-progress'
+http <-- 200, user: testuser_1776682368401(127.0.0.1), req: 'PUT /@blazion%2fplugin-upload-progress', bytes: 4026/0
+http <-- 409, user: testuser_1776682368401(127.0.0.1), req: 'PUT /@blazion%2fplugin-upload-progress', error: this package is already present
+info <-- 127.0.0.1 requested 'GET /'
+http <-- 304, user: null(127.0.0.1), req: 'GET /', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/ui-options.js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/ui-options.js', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/main.CSMR4VIX.css'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/main.CSMR4VIX.css', bytes: 0/0
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/ui-options.js', bytes: 0/404
+http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/main.CSMR4VIX.css', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/vendors.BFZ0M9hf.css'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/vendors.BFZ0M9hf.css', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/vendors.BFZ0M9hf.css', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/main.C8rpEhYw.js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/main.C8rpEhYw.js', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/main.C8rpEhYw.js', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/rolldown-runtime.M0LkISsN.js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/rolldown-runtime.M0LkISsN.js', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/vendors.C3XjFZ1U.js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/vendors.C3XjFZ1U.js', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/utils.VmCFALqk.js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/utils.VmCFALqk.js', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/Versions.D-OAeI-M.js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/Versions.D-OAeI-M.js', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/rolldown-runtime.M0LkISsN.js', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/vendors.C3XjFZ1U.js', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/utils.VmCFALqk.js', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/Versions.D-OAeI-M.js', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/UpLinks.CewYxkDp.js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/UpLinks.CewYxkDp.js', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/UpLinks.CewYxkDp.js', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/NoItems.Dhio8-E1.js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/NoItems.Dhio8-E1.js', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/NoItems.Dhio8-E1.js', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/Dependencies.xc5D0m5v.js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/Dependencies.xc5D0m5v.js', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/Dependencies.xc5D0m5v.js', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/Front.B7lsrBxE.js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/Front.B7lsrBxE.js', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/static/vendors.BFZ0M9hf.css'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/vendors.BFZ0M9hf.css', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/Front.B7lsrBxE.js', bytes: 0/0
+http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/vendors.BFZ0M9hf.css', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/verdaccio/data/packages'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/verdaccio/data/packages', bytes: 0/0
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/verdaccio/data/packages', bytes: 0/2740
+info <-- 127.0.0.1 requested 'GET /-/static/favicon.ico'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/favicon.ico', bytes: 0/0
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/favicon.ico', bytes: 0/2198
+info <-- 127.0.0.1 requested 'GET /@blazion%2fcore'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@blazion%2fcore', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@blazion%2Fcore'
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fcore' (streaming)
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fcore', bytes: 0/21
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /@blazion%2fcore', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@types%2fnode'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@types%2fnode', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@types%2Fnode'
+http --- 200, req: 'GET https://registry.npmjs.org/@types%2Fnode' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@types%2Fnode', bytes: 0/10972342
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@types%2fnode', bytes: 0/1529125
+info <-- 127.0.0.1 requested 'GET /tsx'
+http <-- 200, user: null(127.0.0.1), req: 'GET /tsx', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/tsx'
+http --- 200, req: 'GET https://registry.npmjs.org/tsx' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/tsx', bytes: 0/289592
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /tsx', bytes: 0/58124
+info <-- 127.0.0.1 requested 'GET /typescript'
+http <-- 200, user: null(127.0.0.1), req: 'GET /typescript', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/typescript'
+http --- 200, req: 'GET https://registry.npmjs.org/typescript' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/typescript', bytes: 0/15409943
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /typescript', bytes: 0/2080550
+info <-- 127.0.0.1 requested 'GET /fsevents'
+http <-- 200, user: null(127.0.0.1), req: 'GET /fsevents', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /get-tsconfig'
+http <-- 200, user: null(127.0.0.1), req: 'GET /get-tsconfig', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/fsevents'
+info <-- 127.0.0.1 requested 'GET /esbuild'
+http <-- 200, user: null(127.0.0.1), req: 'GET /esbuild', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/get-tsconfig'
+info <-- 127.0.0.1 requested 'GET /undici-types'
+http <-- 200, user: null(127.0.0.1), req: 'GET /undici-types', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/fsevents' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/esbuild'
+info --- making request: 'GET https://registry.npmjs.org/undici-types'
+http --- 200, req: 'GET https://registry.npmjs.org/fsevents', bytes: 0/182472
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /fsevents', bytes: 0/40341
+http --- 200, req: 'GET https://registry.npmjs.org/get-tsconfig' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/get-tsconfig', bytes: 0/125877
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /get-tsconfig', bytes: 0/28680
+http --- 200, req: 'GET https://registry.npmjs.org/undici-types' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/undici-types', bytes: 0/210150
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /undici-types', bytes: 0/32645
+http --- 200, req: 'GET https://registry.npmjs.org/esbuild' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/esbuild', bytes: 0/1254708
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /esbuild', bytes: 0/367456
+info <-- 127.0.0.1 requested 'GET /@esbuild%2faix-ppc64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2faix-ppc64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2flinux-arm'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2flinux-arm', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2flinux-x64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2flinux-x64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fsunos-x64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fsunos-x64', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Faix-ppc64'
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fdarwin-x64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fdarwin-x64', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Flinux-arm'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Flinux-x64'
+info <-- 127.0.0.1 requested 'GET /@esbuild%2flinux-ia32'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2flinux-ia32', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fsunos-x64'
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fwin32-x64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fwin32-x64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fandroid-arm'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fandroid-arm', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fandroid-x64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fandroid-x64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fnetbsd-x64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fnetbsd-x64', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-arm' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-x64' (streaming)
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fwin32-ia32'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fwin32-ia32', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fdarwin-x64'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Flinux-ia32'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fwin32-x64'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fandroid-arm'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fandroid-x64'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fnetbsd-x64'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fwin32-ia32'
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-arm', bytes: 0/195140
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-x64', bytes: 0/195479
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2flinux-x64', bytes: 0/53092
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2flinux-arm', bytes: 0/52763
+info <-- 127.0.0.1 requested 'GET /@esbuild%2ffreebsd-x64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2ffreebsd-x64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2flinux-arm64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2flinux-arm64', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fdarwin-x64' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Ffreebsd-x64'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Flinux-arm64'
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fdarwin-x64', bytes: 0/196195
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fdarwin-x64', bytes: 0/53096
+info <-- 127.0.0.1 requested 'GET /@esbuild%2flinux-ppc64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2flinux-ppc64', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-arm64' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Ffreebsd-x64' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Flinux-ppc64'
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-arm64', bytes: 0/197274
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Ffreebsd-x64', bytes: 0/197070
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2flinux-arm64', bytes: 0/52848
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2ffreebsd-x64', bytes: 0/53025
+info <-- 127.0.0.1 requested 'GET /@esbuild%2flinux-s390x'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2flinux-s390x', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fopenbsd-x64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fopenbsd-x64', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-ppc64' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-ia32' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Flinux-s390x'
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fwin32-ia32' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fsunos-x64' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-s390x' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fopenbsd-x64'
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fsunos-x64', bytes: 0/195721
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fnetbsd-x64' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-ppc64', bytes: 0/199310
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-s390x', bytes: 0/198784
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-ia32', bytes: 0/196150
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fsunos-x64', bytes: 0/53101
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fwin32-ia32', bytes: 0/196374
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2flinux-ppc64', bytes: 0/52988
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2flinux-s390x', bytes: 0/52996
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fwin32-arm64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fwin32-arm64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fdarwin-arm64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fdarwin-arm64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fnetbsd-arm64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fnetbsd-arm64', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fopenbsd-x64' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fwin32-arm64'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2flinux-ia32', bytes: 0/53088
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fdarwin-arm64'
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fwin32-x64' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fnetbsd-arm64'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fwin32-ia32', bytes: 0/53151
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fnetbsd-x64', bytes: 0/193883
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fopenbsd-x64', bytes: 0/197080
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fandroid-arm64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fandroid-arm64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2ffreebsd-arm64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2ffreebsd-arm64', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fandroid-arm64'
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fnetbsd-arm64' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fandroid-x64' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Ffreebsd-arm64'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fnetbsd-x64', bytes: 0/53174
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fwin32-x64', bytes: 0/194073
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fnetbsd-arm64', bytes: 0/40794
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fopenbsd-x64', bytes: 0/53081
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fnetbsd-arm64', bytes: 0/8617
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fandroid-x64', bytes: 0/195551
+info <-- 127.0.0.1 requested 'GET /@esbuild%2flinux-loong64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2flinux-loong64', bytes: 0/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fwin32-x64', bytes: 0/52897
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Flinux-loong64'
+info <-- 127.0.0.1 requested 'GET /@esbuild%2flinux-riscv64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2flinux-riscv64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fopenbsd-arm64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fopenbsd-arm64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2flinux-mips64el'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2flinux-mips64el', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Faix-ppc64' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fandroid-arm64' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Faix-ppc64', bytes: 0/64314
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Flinux-riscv64'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fopenbsd-arm64'
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Ffreebsd-arm64' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Flinux-mips64el'
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fandroid-arm64', bytes: 0/200684
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fandroid-x64', bytes: 0/53220
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2faix-ppc64', bytes: 0/13207
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fandroid-arm64', bytes: 0/53257
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Ffreebsd-arm64', bytes: 0/198853
+info <-- 127.0.0.1 requested 'GET /resolve-pkg-maps'
+http <-- 200, user: null(127.0.0.1), req: 'GET /resolve-pkg-maps', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fopenharmony-arm64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fopenharmony-arm64', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fopenbsd-arm64' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/resolve-pkg-maps'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fopenharmony-arm64'
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fopenbsd-arm64', bytes: 0/46111
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fopenbsd-arm64', bytes: 0/9485
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2ffreebsd-arm64', bytes: 0/52857
+http --- 200, req: 'GET https://registry.npmjs.org/resolve-pkg-maps' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/resolve-pkg-maps', bytes: 0/11615
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /resolve-pkg-maps', bytes: 0/4607
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-mips64el' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-mips64el', bytes: 0/201062
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2flinux-mips64el', bytes: 0/53054
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fdarwin-arm64' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fdarwin-arm64', bytes: 0/197958
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fdarwin-arm64', bytes: 0/53143
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fwin32-arm64' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fwin32-arm64', bytes: 0/197504
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fwin32-arm64', bytes: 0/53235
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fandroid-arm' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fandroid-arm', bytes: 0/221749
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fandroid-arm', bytes: 0/62251
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fopenharmony-arm64' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Fopenharmony-arm64', bytes: 0/29494
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fopenharmony-arm64', bytes: 0/6257
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-loong64' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-loong64', bytes: 0/252211
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2flinux-loong64', bytes: 0/71221
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-riscv64' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-riscv64', bytes: 0/198981
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2flinux-riscv64', bytes: 0/52940
+info <-- 127.0.0.1 requested 'POST /-/npm/v1/security/advisories/bulk'
+http <-- 200, user: null(127.0.0.1), req: 'POST /-/npm/v1/security/advisories/bulk', bytes: 301/0
+info <-- 127.0.0.1 requested 'GET /typescript/-/typescript-6.0.3.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /typescript/-/typescript-6.0.3.tgz', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /get-tsconfig/-/get-tsconfig-4.14.0.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /get-tsconfig/-/get-tsconfig-4.14.0.tgz', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/get-tsconfig/-/get-tsconfig-4.14.0.tgz'
+info --- making request: 'GET https://registry.npmjs.org/typescript/-/typescript-6.0.3.tgz'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /get-tsconfig/-/get-tsconfig-4.14.0.tgz', bytes: 0/48790
+http <-- 200, user: null(127.0.0.1), req: 'POST /-/npm/v1/security/advisories/bulk', bytes: 301/2
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /typescript/-/typescript-6.0.3.tgz', bytes: 0/4516217
+info <-- 127.0.0.1 requested 'GET /@types%2fblazion__core'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@types%2fblazion__core', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@types%2Fblazion__core'
+http --- 404, req: 'GET https://registry.npmjs.org/@types%2Fblazion__core' (streaming)
+http --- 404, req: 'GET https://registry.npmjs.org/@types%2Fblazion__core', bytes: 0/21
+http <-- 404, user: ql-anshul-jha(127.0.0.1), req: 'GET /@types%2fblazion__core', error: no such package available
+info <-- 127.0.0.1 requested 'GET /-/static/Version.BHNbwvF3.js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/Version.BHNbwvF3.js', bytes: 0/0
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/static/Version.BHNbwvF3.js', bytes: 0/526
+info <-- 127.0.0.1 requested 'GET /-/verdaccio/data/package/readme/@blazion/core'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/verdaccio/data/package/readme/@blazion/core', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /-/verdaccio/data/sidebar/@blazion/core'
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/verdaccio/data/sidebar/@blazion/core', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@blazion%2Fcore'
+info --- making request: 'GET https://registry.npmjs.org/@blazion%2Fcore'
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fcore' (streaming)
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fcore', bytes: 0/21
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/verdaccio/data/package/readme/@blazion/core', bytes: 0/28
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fcore' (streaming)
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fcore', bytes: 0/21
+http <-- 200, user: null(127.0.0.1), req: 'GET /-/verdaccio/data/sidebar/@blazion/core', bytes: 0/1575
+info <-- 127.0.0.1 requested 'PUT /@blazion%2fcore'
+http <-- 200, user: testuser_1776682368401(127.0.0.1), req: 'PUT /@blazion%2fcore', bytes: 16147/0
+http <-- 201, user: testuser_1776682368401(127.0.0.1), req: 'PUT /@blazion%2fcore', bytes: 16147/53
+info <-- 127.0.0.1 requested 'GET /@blazion%2fcore'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@blazion%2fcore', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@blazion%2Fcore'
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fcore' (streaming)
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fcore', bytes: 0/21
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@blazion%2fcore', bytes: 0/609
+info <-- 127.0.0.1 requested 'GET /@blazion%2fcore'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@blazion%2fcore', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@blazion%2Fcore'
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fcore' (streaming)
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fcore', bytes: 0/21
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@blazion%2fcore', bytes: 0/959
+info <-- 127.0.0.1 requested 'POST /-/npm/v1/security/advisories/bulk'
+http <-- 200, user: null(127.0.0.1), req: 'POST /-/npm/v1/security/advisories/bulk', bytes: 47/0
+http <-- 200, user: null(127.0.0.1), req: 'POST /-/npm/v1/security/advisories/bulk', bytes: 47/2
+info <-- 127.0.0.1 requested 'GET /@blazion%2fcore'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@blazion%2fcore', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@blazion%2Fcore'
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fcore' (streaming)
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fcore', bytes: 0/21
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /@blazion%2fcore', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@blazion%2fcore'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@blazion%2fcore', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@blazion%2Fcore'
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fcore' (streaming)
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fcore', bytes: 0/21
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /@blazion%2fcore', bytes: 0/0
+info <-- 127.0.0.1 requested 'POST /-/npm/v1/security/advisories/bulk'
+http <-- 200, user: null(127.0.0.1), req: 'POST /-/npm/v1/security/advisories/bulk', bytes: 300/0
+http <-- 200, user: null(127.0.0.1), req: 'POST /-/npm/v1/security/advisories/bulk', bytes: 300/2
+info <-- 127.0.0.1 requested 'GET /@blazion%2fcore'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@blazion%2fcore', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@blazion%2Fcore'
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fcore' (streaming)
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fcore', bytes: 0/21
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /@blazion%2fcore', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /react'
+http <-- 200, user: null(127.0.0.1), req: 'GET /react', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/react'
+http --- 200, req: 'GET https://registry.npmjs.org/react' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/react', bytes: 0/6613874
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /react', bytes: 0/1343362
+info <-- 127.0.0.1 requested 'GET /react-dom'
+http <-- 200, user: null(127.0.0.1), req: 'GET /react-dom', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/react-dom'
+http --- 200, req: 'GET https://registry.npmjs.org/react-dom' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/react-dom', bytes: 0/8805723
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /react-dom', bytes: 0/1420880
+info <-- 127.0.0.1 requested 'GET /@blazion%2fcore'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@blazion%2fcore', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@blazion%2Fcore'
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fcore' (streaming)
+http --- 404, req: 'GET https://registry.npmjs.org/@blazion%2Fcore', bytes: 0/21
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /@blazion%2fcore', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@eslint%2fjs'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@eslint%2fjs', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@eslint%2Fjs'
+http --- 200, req: 'GET https://registry.npmjs.org/@eslint%2Fjs' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@eslint%2Fjs', bytes: 0/140022
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@eslint%2fjs', bytes: 0/29358
+info <-- 127.0.0.1 requested 'GET /@types%2freact'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@types%2freact', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@types%2Freact'
+http --- 200, req: 'GET https://registry.npmjs.org/@types%2Freact' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@types%2Freact', bytes: 0/2588964
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@types%2freact', bytes: 0/398288
+info <-- 127.0.0.1 requested 'GET /@types%2freact-dom'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@types%2freact-dom', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@types%2Freact-dom'
+http --- 200, req: 'GET https://registry.npmjs.org/@types%2Freact-dom' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@types%2Freact-dom', bytes: 0/429026
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@types%2freact-dom', bytes: 0/100324
+info <-- 127.0.0.1 requested 'GET /@vitejs%2fplugin-react'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@vitejs%2fplugin-react', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@vitejs%2Fplugin-react'
+http --- 200, req: 'GET https://registry.npmjs.org/@vitejs%2Fplugin-react' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@vitejs%2Fplugin-react', bytes: 0/264287
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@vitejs%2fplugin-react', bytes: 0/50330
+info <-- 127.0.0.1 requested 'GET /vite'
+http <-- 200, user: null(127.0.0.1), req: 'GET /vite', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/vite'
+http --- 200, req: 'GET https://registry.npmjs.org/vite' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/vite', bytes: 0/38811285
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /vite', bytes: 0/4697122
+info <-- 127.0.0.1 requested 'GET /@types%2fnode'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@types%2fnode', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@types%2Fnode'
+http --- 304, req: 'GET https://registry.npmjs.org/@types%2Fnode' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@types%2Fnode', bytes: 0/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@types%2fnode', bytes: 0/1529124
+info <-- 127.0.0.1 requested 'GET /less'
+http <-- 200, user: null(127.0.0.1), req: 'GET /less', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/less'
+http --- 200, req: 'GET https://registry.npmjs.org/less' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/less', bytes: 0/461684
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /less', bytes: 0/75134
+info <-- 127.0.0.1 requested 'GET /lightningcss'
+http <-- 200, user: null(127.0.0.1), req: 'GET /lightningcss', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/lightningcss'
+http --- 200, req: 'GET https://registry.npmjs.org/lightningcss' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/lightningcss', bytes: 0/186753
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /lightningcss', bytes: 0/27008
+info <-- 127.0.0.1 requested 'GET /sass'
+http <-- 200, user: null(127.0.0.1), req: 'GET /sass', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/sass'
+http --- 200, req: 'GET https://registry.npmjs.org/sass' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/sass', bytes: 0/726244
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /sass', bytes: 0/198311
+info <-- 127.0.0.1 requested 'GET /sass-embedded'
+http <-- 200, user: null(127.0.0.1), req: 'GET /sass-embedded', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/sass-embedded'
+http --- 200, req: 'GET https://registry.npmjs.org/sass-embedded' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/sass-embedded', bytes: 0/415594
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /sass-embedded', bytes: 0/64620
+info <-- 127.0.0.1 requested 'GET /stylus'
+http <-- 200, user: null(127.0.0.1), req: 'GET /stylus', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/stylus'
+http --- 200, req: 'GET https://registry.npmjs.org/stylus' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/stylus', bytes: 0/286766
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /stylus', bytes: 0/50955
+info <-- 127.0.0.1 requested 'GET /sugarss'
+http <-- 200, user: null(127.0.0.1), req: 'GET /sugarss', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/sugarss'
+http --- 200, req: 'GET https://registry.npmjs.org/sugarss' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/sugarss', bytes: 0/44975
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /sugarss', bytes: 0/12756
+info <-- 127.0.0.1 requested 'GET /postcss'
+http <-- 200, user: null(127.0.0.1), req: 'GET /postcss', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/postcss'
+http --- 200, req: 'GET https://registry.npmjs.org/postcss' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/postcss', bytes: 0/708244
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /postcss', bytes: 0/143483
+info <-- 127.0.0.1 requested 'GET /terser'
+http <-- 200, user: null(127.0.0.1), req: 'GET /terser', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/terser'
+http --- 200, req: 'GET https://registry.npmjs.org/terser' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/terser', bytes: 0/789927
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /terser', bytes: 0/162951
+info <-- 127.0.0.1 requested 'GET /eslint'
+http <-- 200, user: null(127.0.0.1), req: 'GET /eslint', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/eslint'
+http --- 200, req: 'GET https://registry.npmjs.org/eslint' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/eslint', bytes: 0/1983515
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /eslint', bytes: 0/230011
+info <-- 127.0.0.1 requested 'GET /jiti'
+http <-- 200, user: null(127.0.0.1), req: 'GET /jiti', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/jiti'
+http --- 200, req: 'GET https://registry.npmjs.org/jiti' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/jiti', bytes: 0/382310
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /jiti', bytes: 0/77487
+info <-- 127.0.0.1 requested 'GET /eslint-plugin-react-hooks'
+http <-- 200, user: null(127.0.0.1), req: 'GET /eslint-plugin-react-hooks', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/eslint-plugin-react-hooks'
+http --- 200, req: 'GET https://registry.npmjs.org/eslint-plugin-react-hooks' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/eslint-plugin-react-hooks', bytes: 0/7332785
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /eslint-plugin-react-hooks', bytes: 0/1307916
+info <-- 127.0.0.1 requested 'GET /eslint-plugin-react-refresh'
+http <-- 200, user: null(127.0.0.1), req: 'GET /eslint-plugin-react-refresh', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/eslint-plugin-react-refresh'
+http --- 200, req: 'GET https://registry.npmjs.org/eslint-plugin-react-refresh' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/eslint-plugin-react-refresh', bytes: 0/91016
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /eslint-plugin-react-refresh', bytes: 0/22270
+info <-- 127.0.0.1 requested 'GET /globals'
+http <-- 200, user: null(127.0.0.1), req: 'GET /globals', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/globals'
+http --- 200, req: 'GET https://registry.npmjs.org/globals' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/globals', bytes: 0/312297
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /globals', bytes: 0/62631
+info <-- 127.0.0.1 requested 'GET /typescript'
+http <-- 200, user: null(127.0.0.1), req: 'GET /typescript', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/typescript'
+http --- 304, req: 'GET https://registry.npmjs.org/typescript' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/typescript', bytes: 0/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /typescript', bytes: 0/2080548
+info <-- 127.0.0.1 requested 'GET /typescript-eslint'
+http <-- 200, user: null(127.0.0.1), req: 'GET /typescript-eslint', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/typescript-eslint'
+http --- 200, req: 'GET https://registry.npmjs.org/typescript-eslint' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/typescript-eslint', bytes: 0/3819183
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /typescript-eslint', bytes: 0/410207
+info <-- 127.0.0.1 requested 'GET /@babel%2fcore'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2fcore', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@babel%2Fcore'
+info <-- 127.0.0.1 requested 'GET /@types%2fbabel__core'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@types%2fbabel__core', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /csstype'
+http <-- 200, user: null(127.0.0.1), req: 'GET /csstype', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@types%2fprop-types'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@types%2fprop-types', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /react-refresh'
+http <-- 200, user: null(127.0.0.1), req: 'GET /react-refresh', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@babel%2fplugin-transform-react-jsx-self'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2fplugin-transform-react-jsx-self', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /rollup'
+http <-- 200, user: null(127.0.0.1), req: 'GET /rollup', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@types%2Fbabel__core'
+info <-- 127.0.0.1 requested 'GET /@babel%2fplugin-transform-react-jsx-source'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2fplugin-transform-react-jsx-source', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/csstype'
+info <-- 127.0.0.1 requested 'GET /@rolldown%2fpluginutils'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rolldown%2fpluginutils', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@types%2Fprop-types'
+info <-- 127.0.0.1 requested 'GET /postcss'
+http <-- 200, user: null(127.0.0.1), req: 'GET /postcss', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/react-refresh'
+info <-- 127.0.0.1 requested 'GET /esbuild'
+http <-- 200, user: null(127.0.0.1), req: 'GET /esbuild', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@babel%2Fplugin-transform-react-jsx-self'
+info --- making request: 'GET https://registry.npmjs.org/rollup'
+info --- making request: 'GET https://registry.npmjs.org/@babel%2Fplugin-transform-react-jsx-source'
+info --- making request: 'GET https://registry.npmjs.org/@rolldown%2Fpluginutils'
+http --- 200, req: 'GET https://registry.npmjs.org/@types%2Fbabel__core' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/esbuild'
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /postcss', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@types%2Fbabel__core', bytes: 0/88676
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@types%2fbabel__core', bytes: 0/27318
+info <-- 127.0.0.1 requested 'GET /fsevents'
+http <-- 200, user: null(127.0.0.1), req: 'GET /fsevents', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/csstype' (streaming)
+info <-- 127.0.0.1 requested 'GET /ajv'
+http <-- 200, user: null(127.0.0.1), req: 'GET /ajv', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@types%2Fprop-types' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fplugin-transform-react-jsx-self' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/react-refresh' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/fsevents'
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fcore' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fplugin-transform-react-jsx-source' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/rollup' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@rolldown%2Fpluginutils' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@types%2Fprop-types', bytes: 0/53942
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fplugin-transform-react-jsx-self', bytes: 0/198119
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@types%2fprop-types', bytes: 0/16543
+http --- 200, req: 'GET https://registry.npmjs.org/@rolldown%2Fpluginutils', bytes: 0/286972
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fplugin-transform-react-jsx-source', bytes: 0/203114
+info <-- 127.0.0.1 requested 'GET /chalk'
+http <-- 200, user: null(127.0.0.1), req: 'GET /chalk', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/esbuild' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/esbuild', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/fsevents' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/fsevents', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/chalk'
+http --- 200, req: 'GET https://registry.npmjs.org/csstype', bytes: 0/274189
+info --- making request: 'GET https://registry.npmjs.org/ajv'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2fplugin-transform-react-jsx-self', bytes: 0/45556
+info <-- 127.0.0.1 requested 'GET /debug'
+http <-- 200, user: null(127.0.0.1), req: 'GET /debug', bytes: 0/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2fplugin-transform-react-jsx-source', bytes: 0/47217
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fcore', bytes: 0/760113
+info <-- 127.0.0.1 requested 'GET /espree'
+http <-- 200, user: null(127.0.0.1), req: 'GET /espree', bytes: 0/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rolldown%2fpluginutils', bytes: 0/38702
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /fsevents', bytes: 0/40342
+info <-- 127.0.0.1 requested 'GET /ignore'
+http <-- 200, user: null(127.0.0.1), req: 'GET /ignore', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/chalk' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/ajv' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/ajv', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/debug'
+info <-- 127.0.0.1 requested 'GET /esquery'
+http <-- 200, user: null(127.0.0.1), req: 'GET /esquery', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/espree'
+info --- making request: 'GET https://registry.npmjs.org/ignore'
+http --- 200, req: 'GET https://registry.npmjs.org/debug' (streaming)
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /csstype', bytes: 0/68987
+info <-- 127.0.0.1 requested 'GET /esutils'
+http <-- 200, user: null(127.0.0.1), req: 'GET /esutils', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/esquery'
+http --- 200, req: 'GET https://registry.npmjs.org/esquery' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/esutils'
+http --- 200, req: 'GET https://registry.npmjs.org/chalk', bytes: 0/117861
+http --- 200, req: 'GET https://registry.npmjs.org/esquery', bytes: 0/48888
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2fcore', bytes: 0/143358
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /chalk', bytes: 0/24622
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /esquery', bytes: 0/13321
+http --- 200, req: 'GET https://registry.npmjs.org/debug', bytes: 0/195840
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /ajv', bytes: 0/158403
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /debug', bytes: 0/41047
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /esbuild', bytes: 0/367455
+info <-- 127.0.0.1 requested 'GET /find-up'
+http <-- 200, user: null(127.0.0.1), req: 'GET /find-up', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /is-glob'
+http <-- 200, user: null(127.0.0.1), req: 'GET /is-glob', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /minimatch'
+http <-- 200, user: null(127.0.0.1), req: 'GET /minimatch', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /optionator'
+http <-- 200, user: null(127.0.0.1), req: 'GET /optionator', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/esutils' (streaming)
+info <-- 127.0.0.1 requested 'GET /cross-spawn'
+http <-- 200, user: null(127.0.0.1), req: 'GET /cross-spawn', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /glob-parent'
+http <-- 200, user: null(127.0.0.1), req: 'GET /glob-parent', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/find-up'
+http --- 200, req: 'GET https://registry.npmjs.org/esutils', bytes: 0/29522
+http --- 200, req: 'GET https://registry.npmjs.org/espree' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/find-up' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/optionator'
+info --- making request: 'GET https://registry.npmjs.org/is-glob'
+info --- making request: 'GET https://registry.npmjs.org/glob-parent'
+info --- making request: 'GET https://registry.npmjs.org/cross-spawn'
+http --- 200, req: 'GET https://registry.npmjs.org/find-up', bytes: 0/42620
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /esutils', bytes: 0/7032
+http --- 200, req: 'GET https://registry.npmjs.org/espree', bytes: 0/326080
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /find-up', bytes: 0/12688
+info --- making request: 'GET https://registry.npmjs.org/minimatch'
+info <-- 127.0.0.1 requested 'GET /imurmurhash'
+http <-- 200, user: null(127.0.0.1), req: 'GET /imurmurhash', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@eslint%2fcore'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@eslint%2fcore', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/glob-parent' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/cross-spawn' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/optionator' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/is-glob' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/minimatch' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/minimatch', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/imurmurhash'
+http --- 200, req: 'GET https://registry.npmjs.org/imurmurhash' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@eslint%2Fcore'
+http --- 200, req: 'GET https://registry.npmjs.org/is-glob', bytes: 0/40530
+http --- 200, req: 'GET https://registry.npmjs.org/optionator', bytes: 0/49651
+http --- 200, req: 'GET https://registry.npmjs.org/imurmurhash', bytes: 0/35819
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /espree', bytes: 0/58338
+http --- 200, req: 'GET https://registry.npmjs.org/glob-parent', bytes: 0/42445
+http --- 200, req: 'GET https://registry.npmjs.org/cross-spawn', bytes: 0/109066
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /is-glob', bytes: 0/9711
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /imurmurhash', bytes: 0/3865
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /optionator', bytes: 0/13783
+info <-- 127.0.0.1 requested 'GET /eslint-scope'
+http <-- 200, user: null(127.0.0.1), req: 'GET /eslint-scope', bytes: 0/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /minimatch', bytes: 0/87594
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /glob-parent', bytes: 0/12905
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /cross-spawn', bytes: 0/20173
+http --- 200, req: 'GET https://registry.npmjs.org/rollup', bytes: 0/6169575
+info <-- 127.0.0.1 requested 'GET /lodash.merge'
+http <-- 200, user: null(127.0.0.1), req: 'GET /lodash.merge', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@humanfs%2fnode'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@humanfs%2fnode', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@types%2festree'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@types%2festree', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /fast-deep-equal'
+http <-- 200, user: null(127.0.0.1), req: 'GET /fast-deep-equal', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /natural-compare'
+http <-- 200, user: null(127.0.0.1), req: 'GET /natural-compare', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@eslint%2feslintrc'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@eslint%2feslintrc', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/eslint-scope'
+warn --- Password for user "ql-anshul-jha" took 273ms to verify
+warn --- Password for user "ql-anshul-jha" took 219ms to verify
+info --- making request: 'GET https://registry.npmjs.org/lodash.merge'
+info --- making request: 'GET https://registry.npmjs.org/@types%2Festree'
+info --- making request: 'GET https://registry.npmjs.org/natural-compare'
+info --- making request: 'GET https://registry.npmjs.org/fast-deep-equal'
+info --- making request: 'GET https://registry.npmjs.org/@humanfs%2Fnode'
+http --- 200, req: 'GET https://registry.npmjs.org/ignore' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/eslint-scope' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@eslint%2Feslintrc'
+http --- 200, req: 'GET https://registry.npmjs.org/eslint-scope', bytes: 0/98867
+http --- 200, req: 'GET https://registry.npmjs.org/fast-deep-equal' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/natural-compare' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/lodash.merge' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@eslint%2Feslintrc' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@types%2Festree' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/natural-compare', bytes: 0/7852
+http --- 200, req: 'GET https://registry.npmjs.org/fast-deep-equal', bytes: 0/48634
+http --- 200, req: 'GET https://registry.npmjs.org/lodash.merge', bytes: 0/78575
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /eslint-scope', bytes: 0/24756
+http --- 200, req: 'GET https://registry.npmjs.org/@types%2Festree', bytes: 0/74091
+http --- 200, req: 'GET https://registry.npmjs.org/@humanfs%2Fnode' (streaming)
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /natural-compare', bytes: 0/3119
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /fast-deep-equal', bytes: 0/13037
+http --- 200, req: 'GET https://registry.npmjs.org/@humanfs%2Fnode', bytes: 0/39629
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /lodash.merge', bytes: 0/12014
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@types%2festree', bytes: 0/22724
+http --- 200, req: 'GET https://registry.npmjs.org/ignore', bytes: 0/237380
+info <-- 127.0.0.1 requested 'GET /file-entry-cache'
+http <-- 200, user: null(127.0.0.1), req: 'GET /file-entry-cache', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@eslint%2Feslintrc', bytes: 0/168674
+info <-- 127.0.0.1 requested 'GET /@eslint%2fplugin-kit'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@eslint%2fplugin-kit', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /eslint-visitor-keys'
+http <-- 200, user: null(127.0.0.1), req: 'GET /eslint-visitor-keys', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@eslint%2fconfig-array'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@eslint%2fconfig-array', bytes: 0/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@humanfs%2fnode', bytes: 0/8060
+info <-- 127.0.0.1 requested 'GET /@humanwhocodes%2fretry'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@humanwhocodes%2fretry', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/file-entry-cache'
+info --- making request: 'GET https://registry.npmjs.org/@eslint%2Fplugin-kit'
+info <-- 127.0.0.1 requested 'GET /escape-string-regexp'
+http <-- 200, user: null(127.0.0.1), req: 'GET /escape-string-regexp', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/eslint-visitor-keys'
+http --- 200, req: 'GET https://registry.npmjs.org/@eslint%2Fcore' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/file-entry-cache' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@eslint%2Fplugin-kit' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@eslint%2Fconfig-array'
+info --- making request: 'GET https://registry.npmjs.org/@humanwhocodes%2Fretry'
+http --- 200, req: 'GET https://registry.npmjs.org/@eslint%2Fconfig-array' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/escape-string-regexp'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@eslint%2feslintrc', bytes: 0/36863
+http --- 200, req: 'GET https://registry.npmjs.org/@eslint%2Fcore', bytes: 0/58023
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /ignore', bytes: 0/53958
+http --- 200, req: 'GET https://registry.npmjs.org/@eslint%2Fplugin-kit', bytes: 0/73270
+http --- 200, req: 'GET https://registry.npmjs.org/@eslint%2Fconfig-array', bytes: 0/74140
+http --- 200, req: 'GET https://registry.npmjs.org/file-entry-cache', bytes: 0/151480
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@eslint%2fcore', bytes: 0/10467
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@eslint%2fplugin-kit', bytes: 0/12992
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@eslint%2fconfig-array', bytes: 0/13841
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /file-entry-cache', bytes: 0/27980
+http --- 200, req: 'GET https://registry.npmjs.org/react-refresh', bytes: 0/6300571
+info <-- 127.0.0.1 requested 'GET /@eslint%2fconfig-helpers'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@eslint%2fconfig-helpers', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@eslint-community%2fregexpp'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@eslint-community%2fregexpp', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@eslint-community%2feslint-utils'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@eslint-community%2feslint-utils', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@humanwhocodes%2fmodule-importer'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@humanwhocodes%2fmodule-importer', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /json-stable-stringify-without-jsonify'
+http <-- 200, user: null(127.0.0.1), req: 'GET /json-stable-stringify-without-jsonify', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /loose-envify'
+http <-- 200, user: null(127.0.0.1), req: 'GET /loose-envify', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/escape-string-regexp' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/escape-string-regexp', bytes: 0/22244
+warn --- Password for user "ql-anshul-jha" took 337ms to verify
+warn --- Password for user "ql-anshul-jha" took 282ms to verify
+warn --- Password for user "ql-anshul-jha" took 225ms to verify
+info --- making request: 'GET https://registry.npmjs.org/@eslint%2Fconfig-helpers'
+info --- making request: 'GET https://registry.npmjs.org/@eslint-community%2Feslint-utils'
+info --- making request: 'GET https://registry.npmjs.org/@humanwhocodes%2Fmodule-importer'
+info --- making request: 'GET https://registry.npmjs.org/@eslint-community%2Fregexpp'
+http --- 200, req: 'GET https://registry.npmjs.org/eslint-visitor-keys' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/json-stable-stringify-without-jsonify'
+info --- making request: 'GET https://registry.npmjs.org/loose-envify'
+http --- 200, req: 'GET https://registry.npmjs.org/eslint-visitor-keys', bytes: 0/69949
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /escape-string-regexp', bytes: 0/6891
+info <-- 127.0.0.1 requested 'GET /scheduler'
+http <-- 200, user: null(127.0.0.1), req: 'GET /scheduler', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/json-stable-stringify-without-jsonify' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/loose-envify' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@humanwhocodes%2Fmodule-importer' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@eslint%2Fconfig-helpers' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@eslint-community%2Feslint-utils' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@eslint-community%2Fregexpp' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/json-stable-stringify-without-jsonify', bytes: 0/5808
+http --- 200, req: 'GET https://registry.npmjs.org/loose-envify', bytes: 0/12559
+http --- 200, req: 'GET https://registry.npmjs.org/@humanwhocodes%2Fmodule-importer', bytes: 0/9516
+info --- making request: 'GET https://registry.npmjs.org/scheduler'
+http --- 200, req: 'GET https://registry.npmjs.org/@eslint%2Fconfig-helpers', bytes: 0/47979
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /rollup', bytes: 0/631035
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /eslint-visitor-keys', bytes: 0/17097
+http --- 200, req: 'GET https://registry.npmjs.org/@eslint-community%2Feslint-utils', bytes: 0/93301
+http --- 200, req: 'GET https://registry.npmjs.org/@eslint-community%2Fregexpp', bytes: 0/106609
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /json-stable-stringify-without-jsonify', bytes: 0/2283
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /loose-envify', bytes: 0/3891
+info <-- 127.0.0.1 requested 'GET /loose-envify'
+http <-- 200, user: null(127.0.0.1), req: 'GET /loose-envify', bytes: 0/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@humanwhocodes%2fmodule-importer', bytes: 0/4020
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@eslint%2fconfig-helpers', bytes: 0/8210
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint%2futils'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint%2futils', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint%2fparser'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint%2fparser', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint%2feslint-plugin'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint%2feslint-plugin', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint%2ftypescript-estree'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint%2ftypescript-estree', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/scheduler' (streaming)
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@eslint-community%2feslint-utils', bytes: 0/18261
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint%2Futils'
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint%2Fparser'
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint%2Feslint-plugin'
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint%2Ftypescript-estree'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@eslint-community%2fregexpp', bytes: 0/18098
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /loose-envify', bytes: 0/3891
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /react-refresh', bytes: 0/1264560
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Feslint-plugin' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/scheduler', bytes: 0/5480996
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Fparser' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Ftypescript-estree' (streaming)
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /scheduler', bytes: 0/1286092
+http --- 200, req: 'GET https://registry.npmjs.org/@humanwhocodes%2Fretry' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@humanwhocodes%2Fretry', bytes: 0/42348
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@humanwhocodes%2fretry', bytes: 0/7849
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Futils' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Fparser', bytes: 0/15034609
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Futils', bytes: 0/9971849
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint%2futils', bytes: 0/1525721
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint%2fparser', bytes: 0/2907784
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Ftypescript-estree', bytes: 0/16218885
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Feslint-plugin', bytes: 0/17719383
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint%2ftypescript-estree', bytes: 0/2900896
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint%2feslint-plugin', bytes: 0/2913325
+info <-- 127.0.0.1 requested 'GET /gensync'
+http <-- 200, user: null(127.0.0.1), req: 'GET /gensync', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@babel%2ftypes'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2ftypes', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /semver'
+http <-- 200, user: null(127.0.0.1), req: 'GET /semver', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /json5'
+http <-- 200, user: null(127.0.0.1), req: 'GET /json5', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@babel%2fparser'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2fparser', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@babel%2fhelpers'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2fhelpers', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@babel%2ftemplate'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2ftemplate', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@babel%2ftraverse'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2ftraverse', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@babel%2fgenerator'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2fgenerator', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@babel%2fcode-frame'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2fcode-frame', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /debug'
+http <-- 200, user: null(127.0.0.1), req: 'GET /debug', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/gensync'
+info --- making request: 'GET https://registry.npmjs.org/@babel%2Ftypes'
+info --- making request: 'GET https://registry.npmjs.org/semver'
+info --- making request: 'GET https://registry.npmjs.org/json5'
+warn --- Password for user "ql-anshul-jha" took 281ms to verify
+warn --- Password for user "ql-anshul-jha" took 226ms to verify
+info --- making request: 'GET https://registry.npmjs.org/@babel%2Fhelpers'
+info --- making request: 'GET https://registry.npmjs.org/@babel%2Fparser'
+info --- making request: 'GET https://registry.npmjs.org/@babel%2Ftemplate'
+info --- making request: 'GET https://registry.npmjs.org/@babel%2Ftraverse'
+info --- making request: 'GET https://registry.npmjs.org/@babel%2Fgenerator'
+http --- 200, req: 'GET https://registry.npmjs.org/gensync' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Ftypes' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@babel%2Fcode-frame'
+http --- 200, req: 'GET https://registry.npmjs.org/json5' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/semver' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/gensync', bytes: 0/15068
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fcode-frame' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Ftemplate' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fhelpers' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fgenerator' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/json5', bytes: 0/86136
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /debug', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Ftraverse' (streaming)
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /gensync', bytes: 0/5916
+http --- 200, req: 'GET https://registry.npmjs.org/semver', bytes: 0/229620
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Ftemplate', bytes: 0/227169
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /json5', bytes: 0/22032
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fcode-frame', bytes: 0/196196
+info <-- 127.0.0.1 requested 'GET /convert-source-map'
+http <-- 200, user: null(127.0.0.1), req: 'GET /convert-source-map', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@jridgewell%2fremapping'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@jridgewell%2fremapping', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@babel%2fhelper-module-transforms'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2fhelper-module-transforms', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/convert-source-map'
+info --- making request: 'GET https://registry.npmjs.org/@jridgewell%2Fremapping'
+http --- 200, req: 'GET https://registry.npmjs.org/convert-source-map' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@babel%2Fhelper-module-transforms'
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fhelpers', bytes: 0/388224
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2ftemplate', bytes: 0/55422
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /semver', bytes: 0/58994
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Ftypes', bytes: 0/487885
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2fcode-frame', bytes: 0/44820
+http --- 200, req: 'GET https://registry.npmjs.org/convert-source-map', bytes: 0/66997
+info <-- 127.0.0.1 requested 'GET /@babel%2fhelper-compilation-targets'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2fhelper-compilation-targets', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@babel%2fhelper-plugin-utils'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2fhelper-plugin-utils', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@babel%2fhelper-plugin-utils'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2fhelper-plugin-utils', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@jridgewell%2Fremapping' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fhelper-module-transforms' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@babel%2Fhelper-compilation-targets'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /convert-source-map', bytes: 0/15850
+info --- making request: 'GET https://registry.npmjs.org/@babel%2Fhelper-plugin-utils'
+info --- making request: 'GET https://registry.npmjs.org/@babel%2Fhelper-plugin-utils'
+http --- 200, req: 'GET https://registry.npmjs.org/@jridgewell%2Fremapping', bytes: 0/23809
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fgenerator', bytes: 0/507107
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2fhelpers', bytes: 0/96659
+info <-- 127.0.0.1 requested 'GET /@babel%2ftypes'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2ftypes', bytes: 0/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2ftypes', bytes: 0/117995
+info <-- 127.0.0.1 requested 'GET /@babel%2fparser'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2fparser', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@types%2fbabel__template'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@types%2fbabel__template', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fhelper-plugin-utils' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fhelper-plugin-utils' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fhelper-compilation-targets' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Ftraverse', bytes: 0/548722
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@jridgewell%2fremapping', bytes: 0/5582
+info --- making request: 'GET https://registry.npmjs.org/@types%2Fbabel__template'
+info --- making request: 'GET https://registry.npmjs.org/@babel%2Fparser'
+info <-- 127.0.0.1 requested 'GET /@types%2fbabel__traverse'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@types%2fbabel__traverse', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fhelper-module-transforms', bytes: 0/333553
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fhelper-plugin-utils', bytes: 0/163951
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2fgenerator', bytes: 0/125837
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fparser' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@types%2Fbabel__template' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fparser' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@types%2Fbabel__traverse'
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fhelper-compilation-targets', bytes: 0/218757
+http --- 200, req: 'GET https://registry.npmjs.org/@types%2Fbabel__template', bytes: 0/22631
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fhelper-plugin-utils', bytes: 0/163951
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2ftypes', bytes: 0/117995
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2ftraverse', bytes: 0/124763
+info <-- 127.0.0.1 requested 'GET /@types%2fbabel__generator'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@types%2fbabel__generator', bytes: 0/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@types%2fbabel__template', bytes: 0/7426
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2fhelper-plugin-utils', bytes: 0/42134
+http --- 200, req: 'GET https://registry.npmjs.org/@types%2Fbabel__traverse' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@types%2Fbabel__generator'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2fhelper-plugin-utils', bytes: 0/42135
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2fhelper-module-transforms', bytes: 0/77339
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2fhelper-compilation-targets', bytes: 0/51930
+http --- 200, req: 'GET https://registry.npmjs.org/@types%2Fbabel__traverse', bytes: 0/107819
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fparser', bytes: 0/718758
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fparser', bytes: 0/718758
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@types%2fbabel__traverse', bytes: 0/30526
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2fparser', bytes: 0/156188
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2fparser', bytes: 0/156187
+http --- 200, req: 'GET https://registry.npmjs.org/@types%2Fbabel__generator' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@types%2Fbabel__generator', bytes: 0/31587
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@types%2fbabel__generator', bytes: 0/9855
+info <-- 127.0.0.1 requested 'GET /@babel%2fcore'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2fcore', bytes: 0/0
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2fcore', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /js-tokens'
+http <-- 200, user: null(127.0.0.1), req: 'GET /js-tokens', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /jsesc'
+http <-- 200, user: null(127.0.0.1), req: 'GET /jsesc', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@jridgewell%2fgen-mapping'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@jridgewell%2fgen-mapping', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /lru-cache'
+http <-- 200, user: null(127.0.0.1), req: 'GET /lru-cache', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@babel%2fhelper-validator-identifier'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2fhelper-validator-identifier', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /browserslist'
+http <-- 200, user: null(127.0.0.1), req: 'GET /browserslist', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@jridgewell%2ftrace-mapping'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@jridgewell%2ftrace-mapping', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /picocolors'
+http <-- 200, user: null(127.0.0.1), req: 'GET /picocolors', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@babel%2fhelper-validator-option'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2fhelper-validator-option', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@babel%2fcompat-data'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2fcompat-data', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/js-tokens'
+info <-- 127.0.0.1 requested 'GET /@babel%2ftraverse'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2ftraverse', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/jsesc'
+info --- making request: 'GET https://registry.npmjs.org/@jridgewell%2Fgen-mapping'
+info --- making request: 'GET https://registry.npmjs.org/lru-cache'
+http --- 200, req: 'GET https://registry.npmjs.org/js-tokens' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@babel%2Fhelper-validator-identifier'
+info --- making request: 'GET https://registry.npmjs.org/browserslist'
+info --- making request: 'GET https://registry.npmjs.org/@jridgewell%2Ftrace-mapping'
+http --- 200, req: 'GET https://registry.npmjs.org/jsesc' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/picocolors'
+info --- making request: 'GET https://registry.npmjs.org/@babel%2Fhelper-validator-option'
+info --- making request: 'GET https://registry.npmjs.org/@babel%2Fcompat-data'
+http --- 200, req: 'GET https://registry.npmjs.org/lru-cache' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/js-tokens', bytes: 0/41947
+http --- 200, req: 'GET https://registry.npmjs.org/picocolors' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@jridgewell%2Ftrace-mapping' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/browserslist' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fhelper-validator-identifier' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fhelper-validator-option' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/jsesc', bytes: 0/61512
+http --- 200, req: 'GET https://registry.npmjs.org/picocolors', bytes: 0/16648
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fcompat-data' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fhelper-validator-option', bytes: 0/92248
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2ftraverse', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fhelper-validator-identifier', bytes: 0/116299
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /js-tokens', bytes: 0/11683
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /jsesc', bytes: 0/15203
+http --- 200, req: 'GET https://registry.npmjs.org/@jridgewell%2Ftrace-mapping', bytes: 0/170909
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /picocolors', bytes: 0/4887
+info <-- 127.0.0.1 requested 'GET /@babel%2fhelper-validator-identifier'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2fhelper-validator-identifier', bytes: 0/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2fhelper-validator-option', bytes: 0/21895
+info <-- 127.0.0.1 requested 'GET /@babel%2fhelper-module-imports'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2fhelper-module-imports', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@babel%2fhelper-globals'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2fhelper-globals', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@babel%2fhelper-string-parser'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2fhelper-string-parser', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@babel%2ftypes'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@babel%2ftypes', bytes: 0/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2fhelper-validator-identifier', bytes: 0/27386
+warn --- Password for user "ql-anshul-jha" took 222ms to verify
+info --- making request: 'GET https://registry.npmjs.org/@babel%2Fhelper-module-imports'
+info --- making request: 'GET https://registry.npmjs.org/@babel%2Fhelper-globals'
+info --- making request: 'GET https://registry.npmjs.org/@babel%2Fhelper-string-parser'
+info <-- 127.0.0.1 requested 'GET /@jridgewell%2fgen-mapping'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@jridgewell%2fgen-mapping', bytes: 0/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@jridgewell%2ftrace-mapping', bytes: 0/36138
+info <-- 127.0.0.1 requested 'GET /@jridgewell%2ftrace-mapping'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@jridgewell%2ftrace-mapping', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fhelper-globals' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fhelper-string-parser' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fhelper-module-imports' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@jridgewell%2Fgen-mapping'
+http --- 200, req: 'GET https://registry.npmjs.org/lru-cache', bytes: 0/439357
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2fhelper-validator-identifier', bytes: 0/27386
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fhelper-globals', bytes: 0/15475
+info <-- 127.0.0.1 requested 'GET /ms'
+http <-- 200, user: null(127.0.0.1), req: 'GET /ms', bytes: 0/0
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2ftypes', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fcompat-data', bytes: 0/305632
+http --- 200, req: 'GET https://registry.npmjs.org/@jridgewell%2Fgen-mapping' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fhelper-string-parser', bytes: 0/82028
+http --- 200, req: 'GET https://registry.npmjs.org/browserslist', bytes: 0/504681
+info --- making request: 'GET https://registry.npmjs.org/ms'
+http --- 200, req: 'GET https://registry.npmjs.org/@jridgewell%2Fgen-mapping', bytes: 0/80719
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /@jridgewell%2ftrace-mapping', bytes: 0/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2fhelper-globals', bytes: 0/3225
+http --- 200, req: 'GET https://registry.npmjs.org/@babel%2Fhelper-module-imports', bytes: 0/193449
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2fhelper-string-parser', bytes: 0/17063
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2fcompat-data', bytes: 0/67144
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@jridgewell%2fgen-mapping', bytes: 0/15385
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /lru-cache', bytes: 0/102490
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@babel%2fhelper-module-imports', bytes: 0/46818
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /browserslist', bytes: 0/116504
+http --- 200, req: 'GET https://registry.npmjs.org/ms' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/ms', bytes: 0/92208
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /ms', bytes: 0/18239
+http --- 200, req: 'GET https://registry.npmjs.org/@jridgewell%2Fgen-mapping' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@jridgewell%2Fgen-mapping', bytes: 0/80719
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@jridgewell%2fgen-mapping', bytes: 0/15384
+info <-- 127.0.0.1 requested 'GET /@jridgewell%2fresolve-uri'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@jridgewell%2fresolve-uri', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@jridgewell%2fsourcemap-codec'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@jridgewell%2fsourcemap-codec', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@jridgewell%2fsourcemap-codec'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@jridgewell%2fsourcemap-codec', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@jridgewell%2Fsourcemap-codec'
+info --- making request: 'GET https://registry.npmjs.org/@jridgewell%2Fsourcemap-codec'
+info --- making request: 'GET https://registry.npmjs.org/@jridgewell%2Fresolve-uri'
+http --- 200, req: 'GET https://registry.npmjs.org/@jridgewell%2Fresolve-uri' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@jridgewell%2Fresolve-uri', bytes: 0/57361
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@jridgewell%2fresolve-uri', bytes: 0/15311
+http --- 200, req: 'GET https://registry.npmjs.org/@jridgewell%2Fsourcemap-codec' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@jridgewell%2Fsourcemap-codec', bytes: 0/59275
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@jridgewell%2fsourcemap-codec', bytes: 0/13211
+http --- 200, req: 'GET https://registry.npmjs.org/@jridgewell%2Fsourcemap-codec' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@jridgewell%2Fsourcemap-codec', bytes: 0/59275
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@jridgewell%2fsourcemap-codec', bytes: 0/13212
+info <-- 127.0.0.1 requested 'GET /node-releases'
+http <-- 200, user: null(127.0.0.1), req: 'GET /node-releases', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /baseline-browser-mapping'
+http <-- 200, user: null(127.0.0.1), req: 'GET /baseline-browser-mapping', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /yallist'
+http <-- 200, user: null(127.0.0.1), req: 'GET /yallist', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /electron-to-chromium'
+http <-- 200, user: null(127.0.0.1), req: 'GET /electron-to-chromium', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /update-browserslist-db'
+http <-- 200, user: null(127.0.0.1), req: 'GET /update-browserslist-db', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /caniuse-lite'
+http <-- 200, user: null(127.0.0.1), req: 'GET /caniuse-lite', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/node-releases'
+info --- making request: 'GET https://registry.npmjs.org/baseline-browser-mapping'
+info --- making request: 'GET https://registry.npmjs.org/yallist'
+info --- making request: 'GET https://registry.npmjs.org/electron-to-chromium'
+info --- making request: 'GET https://registry.npmjs.org/update-browserslist-db'
+info --- making request: 'GET https://registry.npmjs.org/caniuse-lite'
+http --- 200, req: 'GET https://registry.npmjs.org/yallist' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/baseline-browser-mapping' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/yallist', bytes: 0/34610
+http --- 200, req: 'GET https://registry.npmjs.org/electron-to-chromium' (streaming)
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /yallist', bytes: 0/10493
+http --- 200, req: 'GET https://registry.npmjs.org/baseline-browser-mapping', bytes: 0/448101
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /baseline-browser-mapping', bytes: 0/48476
+http --- 200, req: 'GET https://registry.npmjs.org/update-browserslist-db' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/update-browserslist-db', bytes: 0/62000
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /update-browserslist-db', bytes: 0/16076
+http --- 200, req: 'GET https://registry.npmjs.org/caniuse-lite' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/node-releases' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/node-releases', bytes: 0/272120
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /node-releases', bytes: 0/88358
+http --- 200, req: 'GET https://registry.npmjs.org/caniuse-lite', bytes: 0/2285117
+http --- 200, req: 'GET https://registry.npmjs.org/electron-to-chromium', bytes: 0/4761682
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /caniuse-lite', bytes: 0/550410
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /electron-to-chromium', bytes: 0/1222454
+info <-- 127.0.0.1 requested 'GET /browserslist'
+http <-- 200, user: null(127.0.0.1), req: 'GET /browserslist', bytes: 0/0
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /browserslist', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /escalade'
+http <-- 200, user: null(127.0.0.1), req: 'GET /escalade', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/escalade'
+http --- 200, req: 'GET https://registry.npmjs.org/escalade' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/escalade', bytes: 0/33724
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /escalade', bytes: 0/11804
+info <-- 127.0.0.1 requested 'GET /eslint'
+http <-- 200, user: null(127.0.0.1), req: 'GET /eslint', bytes: 0/0
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /eslint', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@eslint%2fobject-schema'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@eslint%2fobject-schema', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /js-yaml'
+http <-- 200, user: null(127.0.0.1), req: 'GET /js-yaml', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /strip-json-comments'
+http <-- 200, user: null(127.0.0.1), req: 'GET /strip-json-comments', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /levn'
+http <-- 200, user: null(127.0.0.1), req: 'GET /levn', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /eslint-visitor-keys'
+http <-- 200, user: null(127.0.0.1), req: 'GET /eslint-visitor-keys', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /espree'
+http <-- 200, user: null(127.0.0.1), req: 'GET /espree', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /globals'
+http <-- 200, user: null(127.0.0.1), req: 'GET /globals', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@humanwhocodes%2fretry'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@humanwhocodes%2fretry', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@humanfs%2fcore'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@humanfs%2fcore', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /import-fresh'
+http <-- 200, user: null(127.0.0.1), req: 'GET /import-fresh', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@types%2fjson-schema'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@types%2fjson-schema', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@eslint%2Fobject-schema'
+info --- making request: 'GET https://registry.npmjs.org/js-yaml'
+info --- making request: 'GET https://registry.npmjs.org/strip-json-comments'
+info --- making request: 'GET https://registry.npmjs.org/levn'
+warn --- Password for user "ql-anshul-jha" took 392ms to verify
+warn --- Password for user "ql-anshul-jha" took 337ms to verify
+warn --- Password for user "ql-anshul-jha" took 283ms to verify
+warn --- Password for user "ql-anshul-jha" took 229ms to verify
+info --- making request: 'GET https://registry.npmjs.org/@humanfs%2Fcore'
+info --- making request: 'GET https://registry.npmjs.org/import-fresh'
+http --- 200, req: 'GET https://registry.npmjs.org/levn' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/js-yaml' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/strip-json-comments' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@eslint%2Fobject-schema' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@types%2Fjson-schema'
+http --- 200, req: 'GET https://registry.npmjs.org/levn', bytes: 0/28223
+http --- 200, req: 'GET https://registry.npmjs.org/strip-json-comments', bytes: 0/43569
+http --- 200, req: 'GET https://registry.npmjs.org/@eslint%2Fobject-schema', bytes: 0/38535
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /@humanwhocodes%2fretry', bytes: 0/0
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /eslint-visitor-keys', bytes: 0/0
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /espree', bytes: 0/0
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /globals', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /fast-deep-equal'
+http <-- 200, user: null(127.0.0.1), req: 'GET /fast-deep-equal', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /fast-json-stable-stringify'
+http <-- 200, user: null(127.0.0.1), req: 'GET /fast-json-stable-stringify', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@humanfs%2ftypes'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@humanfs%2ftypes', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/js-yaml', bytes: 0/152232
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /levn', bytes: 0/8635
+info <-- 127.0.0.1 requested 'GET /json-schema-traverse'
+http <-- 200, user: null(127.0.0.1), req: 'GET /json-schema-traverse', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@types%2Fjson-schema' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@humanfs%2Fcore' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/import-fresh' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/fast-json-stable-stringify'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /strip-json-comments', bytes: 0/11414
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@eslint%2fobject-schema', bytes: 0/8270
+info <-- 127.0.0.1 requested 'GET /uri-js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /uri-js', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@humanfs%2Ftypes'
+http --- 200, req: 'GET https://registry.npmjs.org/import-fresh', bytes: 0/24604
+http --- 200, req: 'GET https://registry.npmjs.org/@humanfs%2Fcore', bytes: 0/37261
+http --- 200, req: 'GET https://registry.npmjs.org/@types%2Fjson-schema', bytes: 0/44704
+info <-- 127.0.0.1 requested 'GET /supports-color'
+http <-- 200, user: null(127.0.0.1), req: 'GET /supports-color', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /ansi-styles'
+http <-- 200, user: null(127.0.0.1), req: 'GET /ansi-styles', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@humanfs%2Ftypes' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/json-schema-traverse'
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /fast-deep-equal', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/uri-js'
+http --- 200, req: 'GET https://registry.npmjs.org/@humanfs%2Ftypes', bytes: 0/19212
+info <-- 127.0.0.1 requested 'GET /which'
+http <-- 200, user: null(127.0.0.1), req: 'GET /which', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/supports-color'
+http --- 200, req: 'GET https://registry.npmjs.org/json-schema-traverse' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/uri-js' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/ansi-styles'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /js-yaml', bytes: 0/31526
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /import-fresh', bytes: 0/8780
+http --- 200, req: 'GET https://registry.npmjs.org/json-schema-traverse', bytes: 0/23537
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@humanfs%2fcore', bytes: 0/8109
+info <-- 127.0.0.1 requested 'GET /path-key'
+http <-- 200, user: null(127.0.0.1), req: 'GET /path-key', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/supports-color' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/ansi-styles' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/which'
+http --- 200, req: 'GET https://registry.npmjs.org/uri-js', bytes: 0/42559
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@types%2fjson-schema', bytes: 0/13986
+info <-- 127.0.0.1 requested 'GET /shebang-command'
+http <-- 200, user: null(127.0.0.1), req: 'GET /shebang-command', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /esrecurse'
+http <-- 200, user: null(127.0.0.1), req: 'GET /esrecurse', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /estraverse'
+http <-- 200, user: null(127.0.0.1), req: 'GET /estraverse', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/fast-json-stable-stringify' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/which' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/path-key'
+http --- 200, req: 'GET https://registry.npmjs.org/ansi-styles', bytes: 0/63233
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@humanfs%2ftypes', bytes: 0/4393
+http --- 200, req: 'GET https://registry.npmjs.org/fast-json-stable-stringify', bytes: 0/11337
+info <-- 127.0.0.1 requested 'GET /acorn'
+http <-- 200, user: null(127.0.0.1), req: 'GET /acorn', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/supports-color', bytes: 0/118680
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /json-schema-traverse', bytes: 0/7550
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /uri-js', bytes: 0/10848
+info --- making request: 'GET https://registry.npmjs.org/shebang-command'
+info --- making request: 'GET https://registry.npmjs.org/esrecurse'
+info --- making request: 'GET https://registry.npmjs.org/estraverse'
+http --- 200, req: 'GET https://registry.npmjs.org/path-key' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/which', bytes: 0/67747
+http --- 200, req: 'GET https://registry.npmjs.org/path-key', bytes: 0/16975
+info <-- 127.0.0.1 requested 'GET /acorn-jsx'
+http <-- 200, user: null(127.0.0.1), req: 'GET /acorn-jsx', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /estraverse'
+http <-- 200, user: null(127.0.0.1), req: 'GET /estraverse', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/esrecurse' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/estraverse' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/shebang-command' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/acorn'
+http --- 200, req: 'GET https://registry.npmjs.org/shebang-command', bytes: 0/8525
+http --- 200, req: 'GET https://registry.npmjs.org/esrecurse', bytes: 0/29005
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /ansi-styles', bytes: 0/17394
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /fast-json-stable-stringify', bytes: 0/4164
+http --- 200, req: 'GET https://registry.npmjs.org/estraverse', bytes: 0/62412
+info --- making request: 'GET https://registry.npmjs.org/estraverse'
+info <-- 127.0.0.1 requested 'GET /flat-cache'
+http <-- 200, user: null(127.0.0.1), req: 'GET /flat-cache', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /locate-path'
+http <-- 200, user: null(127.0.0.1), req: 'GET /locate-path', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/acorn-jsx'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /supports-color', bytes: 0/29160
+info --- making request: 'GET https://registry.npmjs.org/locate-path'
+info <-- 127.0.0.1 requested 'GET /path-exists'
+http <-- 200, user: null(127.0.0.1), req: 'GET /path-exists', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/estraverse' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/acorn-jsx' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/flat-cache'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /path-key', bytes: 0/6237
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /which', bytes: 0/16630
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /shebang-command', bytes: 0/3045
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /esrecurse', bytes: 0/7579
+http --- 200, req: 'GET https://registry.npmjs.org/estraverse', bytes: 0/62412
+info <-- 127.0.0.1 requested 'GET /is-glob'
+http <-- 200, user: null(127.0.0.1), req: 'GET /is-glob', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /is-extglob'
+http <-- 200, user: null(127.0.0.1), req: 'GET /is-extglob', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /brace-expansion'
+http <-- 200, user: null(127.0.0.1), req: 'GET /brace-expansion', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /prelude-ls'
+http <-- 200, user: null(127.0.0.1), req: 'GET /prelude-ls', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/locate-path' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/flat-cache' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/path-exists'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /estraverse', bytes: 0/14928
+http --- 200, req: 'GET https://registry.npmjs.org/acorn-jsx', bytes: 0/71068
+http --- 200, req: 'GET https://registry.npmjs.org/locate-path', bytes: 0/31329
+warn --- Password for user "ql-anshul-jha" took 227ms to verify
+info --- making request: 'GET https://registry.npmjs.org/is-extglob'
+info --- making request: 'GET https://registry.npmjs.org/prelude-ls'
+info --- making request: 'GET https://registry.npmjs.org/brace-expansion'
+info <-- 127.0.0.1 requested 'GET /deep-is'
+http <-- 200, user: null(127.0.0.1), req: 'GET /deep-is', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/acorn' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/path-exists' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/path-exists', bytes: 0/13704
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /estraverse', bytes: 0/14928
+info <-- 127.0.0.1 requested 'GET /word-wrap'
+http <-- 200, user: null(127.0.0.1), req: 'GET /word-wrap', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/prelude-ls' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/is-extglob' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/brace-expansion' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/deep-is'
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /is-glob', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/flat-cache', bytes: 0/169582
+http --- 200, req: 'GET https://registry.npmjs.org/is-extglob', bytes: 0/11766
+http --- 200, req: 'GET https://registry.npmjs.org/prelude-ls', bytes: 0/25777
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /acorn-jsx', bytes: 0/17820
+info <-- 127.0.0.1 requested 'GET /type-check'
+http <-- 200, user: null(127.0.0.1), req: 'GET /type-check', bytes: 0/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /locate-path', bytes: 0/10574
+info <-- 127.0.0.1 requested 'GET /fast-levenshtein'
+http <-- 200, user: null(127.0.0.1), req: 'GET /fast-levenshtein', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/deep-is' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/word-wrap'
+http --- 200, req: 'GET https://registry.npmjs.org/brace-expansion', bytes: 0/65768
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /path-exists', bytes: 0/4849
+http --- 200, req: 'GET https://registry.npmjs.org/deep-is', bytes: 0/10205
+http --- 200, req: 'GET https://registry.npmjs.org/word-wrap' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/type-check'
+http --- 200, req: 'GET https://registry.npmjs.org/type-check' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/fast-levenshtein'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /is-extglob', bytes: 0/3448
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /flat-cache', bytes: 0/29465
+http --- 200, req: 'GET https://registry.npmjs.org/word-wrap', bytes: 0/37835
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /prelude-ls', bytes: 0/6381
+http --- 200, req: 'GET https://registry.npmjs.org/type-check', bytes: 0/21221
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /brace-expansion', bytes: 0/12638
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /deep-is', bytes: 0/3687
+http --- 200, req: 'GET https://registry.npmjs.org/acorn', bytes: 0/379626
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /word-wrap', bytes: 0/8425
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /type-check', bytes: 0/6783
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /acorn', bytes: 0/80239
+http --- 200, req: 'GET https://registry.npmjs.org/fast-levenshtein' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/fast-levenshtein', bytes: 0/39317
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /fast-levenshtein', bytes: 0/8154
+info <-- 127.0.0.1 requested 'GET /parent-module'
+http <-- 200, user: null(127.0.0.1), req: 'GET /parent-module', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /resolve-from'
+http <-- 200, user: null(127.0.0.1), req: 'GET /resolve-from', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /argparse'
+http <-- 200, user: null(127.0.0.1), req: 'GET /argparse', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/parent-module'
+info --- making request: 'GET https://registry.npmjs.org/resolve-from'
+info --- making request: 'GET https://registry.npmjs.org/argparse'
+http --- 200, req: 'GET https://registry.npmjs.org/parent-module' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/argparse' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/parent-module', bytes: 0/18255
+http --- 200, req: 'GET https://registry.npmjs.org/argparse', bytes: 0/49266
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /parent-module', bytes: 0/6534
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /argparse', bytes: 0/11713
+http --- 200, req: 'GET https://registry.npmjs.org/resolve-from' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/resolve-from', bytes: 0/12911
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /resolve-from', bytes: 0/4052
+info <-- 127.0.0.1 requested 'GET /type-check'
+http <-- 200, user: null(127.0.0.1), req: 'GET /type-check', bytes: 0/0
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /type-check', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /punycode'
+http <-- 200, user: null(127.0.0.1), req: 'GET /punycode', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/punycode'
+http --- 200, req: 'GET https://registry.npmjs.org/punycode' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/punycode', bytes: 0/61302
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /punycode', bytes: 0/14703
+info <-- 127.0.0.1 requested 'GET /color-convert'
+http <-- 200, user: null(127.0.0.1), req: 'GET /color-convert', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /has-flag'
+http <-- 200, user: null(127.0.0.1), req: 'GET /has-flag', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/color-convert'
+info --- making request: 'GET https://registry.npmjs.org/has-flag'
+http --- 200, req: 'GET https://registry.npmjs.org/has-flag' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/has-flag', bytes: 0/15180
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /has-flag', bytes: 0/5502
+http --- 200, req: 'GET https://registry.npmjs.org/color-convert' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/color-convert', bytes: 0/72663
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /color-convert', bytes: 0/16761
+info <-- 127.0.0.1 requested 'GET /color-name'
+http <-- 200, user: null(127.0.0.1), req: 'GET /color-name', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/color-name'
+http --- 200, req: 'GET https://registry.npmjs.org/color-name' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/color-name', bytes: 0/19467
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /color-name', bytes: 0/5954
+info <-- 127.0.0.1 requested 'GET /shebang-regex'
+http <-- 200, user: null(127.0.0.1), req: 'GET /shebang-regex', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /isexe'
+http <-- 200, user: null(127.0.0.1), req: 'GET /isexe', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/shebang-regex'
+info --- making request: 'GET https://registry.npmjs.org/isexe'
+http --- 200, req: 'GET https://registry.npmjs.org/isexe' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/isexe', bytes: 0/31756
+http --- 200, req: 'GET https://registry.npmjs.org/shebang-regex' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/shebang-regex', bytes: 0/9763
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /isexe', bytes: 0/7174
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /shebang-regex', bytes: 0/3940
+info <-- 127.0.0.1 requested 'GET /keyv'
+http <-- 200, user: null(127.0.0.1), req: 'GET /keyv', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /flatted'
+http <-- 200, user: null(127.0.0.1), req: 'GET /flatted', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/flatted'
+info --- making request: 'GET https://registry.npmjs.org/keyv'
+http --- 200, req: 'GET https://registry.npmjs.org/keyv' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/keyv', bytes: 0/215840
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /keyv', bytes: 0/42805
+http --- 200, req: 'GET https://registry.npmjs.org/flatted' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/flatted', bytes: 0/137347
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /flatted', bytes: 0/32824
+info <-- 127.0.0.1 requested 'GET /p-locate'
+http <-- 200, user: null(127.0.0.1), req: 'GET /p-locate', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/p-locate'
+http --- 200, req: 'GET https://registry.npmjs.org/p-locate' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/p-locate', bytes: 0/22488
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /p-locate', bytes: 0/8014
+info <-- 127.0.0.1 requested 'GET /json-buffer'
+http <-- 200, user: null(127.0.0.1), req: 'GET /json-buffer', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/json-buffer'
+http --- 200, req: 'GET https://registry.npmjs.org/json-buffer' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/json-buffer', bytes: 0/23474
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /json-buffer', bytes: 0/5597
+info <-- 127.0.0.1 requested 'GET /callsites'
+http <-- 200, user: null(127.0.0.1), req: 'GET /callsites', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/callsites'
+http --- 200, req: 'GET https://registry.npmjs.org/callsites' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/callsites', bytes: 0/21349
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /callsites', bytes: 0/6841
+info <-- 127.0.0.1 requested 'GET /p-limit'
+http <-- 200, user: null(127.0.0.1), req: 'GET /p-limit', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/p-limit'
+http --- 200, req: 'GET https://registry.npmjs.org/p-limit' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/p-limit', bytes: 0/61867
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /p-limit', bytes: 0/17592
+info <-- 127.0.0.1 requested 'GET /balanced-match'
+http <-- 200, user: null(127.0.0.1), req: 'GET /balanced-match', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /concat-map'
+http <-- 200, user: null(127.0.0.1), req: 'GET /concat-map', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/balanced-match'
+info --- making request: 'GET https://registry.npmjs.org/concat-map'
+http --- 200, req: 'GET https://registry.npmjs.org/concat-map' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/concat-map', bytes: 0/9290
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /concat-map', bytes: 0/3914
+http --- 200, req: 'GET https://registry.npmjs.org/balanced-match' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/balanced-match', bytes: 0/39082
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /balanced-match', bytes: 0/9672
+info <-- 127.0.0.1 requested 'GET /yocto-queue'
+http <-- 200, user: null(127.0.0.1), req: 'GET /yocto-queue', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/yocto-queue'
+http --- 200, req: 'GET https://registry.npmjs.org/yocto-queue' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/yocto-queue', bytes: 0/20256
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /yocto-queue', bytes: 0/6668
+info <-- 127.0.0.1 requested 'GET /eslint'
+http <-- 200, user: null(127.0.0.1), req: 'GET /eslint', bytes: 0/0
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /eslint', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /typescript'
+http <-- 200, user: null(127.0.0.1), req: 'GET /typescript', bytes: 0/0
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /typescript', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /ts-api-utils'
+http <-- 200, user: null(127.0.0.1), req: 'GET /ts-api-utils', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint%2ftype-utils'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint%2ftype-utils', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint%2fvisitor-keys'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint%2fvisitor-keys', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint%2ftypes'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint%2ftypes', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint%2fvisitor-keys'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint%2fvisitor-keys', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /ignore'
+http <-- 200, user: null(127.0.0.1), req: 'GET /ignore', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /semver'
+http <-- 200, user: null(127.0.0.1), req: 'GET /semver', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /minimatch'
+http <-- 200, user: null(127.0.0.1), req: 'GET /minimatch', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint%2fscope-manager'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint%2fscope-manager', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint%2fscope-manager'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint%2fscope-manager', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /tinyglobby'
+http <-- 200, user: null(127.0.0.1), req: 'GET /tinyglobby', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/ts-api-utils'
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint%2Fvisitor-keys'
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint%2Ftype-utils'
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint%2Ftypes'
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint%2Fvisitor-keys'
+warn --- Password for user "ql-anshul-jha" took 333ms to verify
+warn --- Password for user "ql-anshul-jha" took 278ms to verify
+warn --- Password for user "ql-anshul-jha" took 223ms to verify
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint%2Fscope-manager'
+info --- making request: 'GET https://registry.npmjs.org/tinyglobby'
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Fvisitor-keys' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Ftype-utils' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Fvisitor-keys' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Ftypes' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint%2Fscope-manager'
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /semver', bytes: 0/0
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /ignore', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /ts-api-utils'
+http <-- 200, user: null(127.0.0.1), req: 'GET /ts-api-utils', bytes: 0/0
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /minimatch', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint%2ftypes'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint%2ftypes', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint%2fvisitor-keys'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint%2fvisitor-keys', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/ts-api-utils'
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint%2Ftypes'
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint%2Fvisitor-keys'
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Fscope-manager' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Fscope-manager' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Fvisitor-keys' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/ts-api-utils' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/ts-api-utils' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/ts-api-utils', bytes: 0/226785
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /ts-api-utils', bytes: 0/36934
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint%2ftsconfig-utils'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint%2ftsconfig-utils', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Ftypes' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint%2Ftsconfig-utils'
+http --- 200, req: 'GET https://registry.npmjs.org/tinyglobby' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/tinyglobby', bytes: 0/52660
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /tinyglobby', bytes: 0/8767
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint%2fproject-service'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint%2fproject-service', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint%2Fproject-service'
+http --- 200, req: 'GET https://registry.npmjs.org/ts-api-utils', bytes: 0/226785
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /ts-api-utils', bytes: 0/36934
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint%2ftypes'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint%2ftypes', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint%2Ftypes'
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Fproject-service' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Ftypes' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Fproject-service', bytes: 0/1172284
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint%2fproject-service', bytes: 0/121820
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint%2fscope-manager'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint%2fscope-manager', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint%2Fscope-manager'
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Fscope-manager' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Ftsconfig-utils' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Ftypes', bytes: 0/12087896
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Ftypes', bytes: 0/12087896
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Ftsconfig-utils', bytes: 0/1103598
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint%2ftsconfig-utils', bytes: 0/117634
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Fscope-manager', bytes: 0/12278687
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint%2ftypes', bytes: 0/2197135
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint%2ftypes', bytes: 0/2197137
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint%2fscope-manager', bytes: 0/2227874
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Fscope-manager', bytes: 0/12278687
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Fvisitor-keys', bytes: 0/11694500
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Fscope-manager', bytes: 0/12278687
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Fvisitor-keys', bytes: 0/11694500
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint%2fvisitor-keys', bytes: 0/2191191
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint%2fscope-manager', bytes: 0/2227873
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint%2fscope-manager', bytes: 0/2227877
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint%2fvisitor-keys', bytes: 0/2191196
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Ftypes', bytes: 0/12087896
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint%2ftypes', bytes: 0/2197135
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Ftype-utils', bytes: 0/9155513
+http --- 200, req: 'GET https://registry.npmjs.org/@typescript-eslint%2Fvisitor-keys', bytes: 0/11694500
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint%2ftype-utils', bytes: 0/1511922
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint%2fvisitor-keys', bytes: 0/2191195
+info <-- 127.0.0.1 requested 'GET /fdir'
+http <-- 200, user: null(127.0.0.1), req: 'GET /fdir', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /picomatch'
+http <-- 200, user: null(127.0.0.1), req: 'GET /picomatch', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /brace-expansion'
+http <-- 200, user: null(127.0.0.1), req: 'GET /brace-expansion', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint%2ftsconfig-utils'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint%2ftsconfig-utils', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/picomatch'
+info --- making request: 'GET https://registry.npmjs.org/fdir'
+http --- 200, req: 'GET https://registry.npmjs.org/picomatch' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/fdir' (streaming)
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /brace-expansion', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/picomatch', bytes: 0/126376
+http --- 200, req: 'GET https://registry.npmjs.org/fdir', bytes: 0/136182
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint%2ftsconfig-utils', bytes: 0/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /picomatch', bytes: 0/33957
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /fdir', bytes: 0/36000
+info <-- 127.0.0.1 requested 'GET /@esbuild%2flinux-x64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2flinux-x64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2flinux-arm'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2flinux-arm', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2faix-ppc64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2faix-ppc64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fwin32-x64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fwin32-x64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2flinux-ia32'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2flinux-ia32', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fwin32-ia32'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fwin32-ia32', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fsunos-x64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fsunos-x64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fandroid-x64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fandroid-x64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fnetbsd-x64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fnetbsd-x64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fandroid-arm'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fandroid-arm', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fdarwin-x64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fdarwin-x64', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Flinux-arm'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Flinux-x64'
+warn --- Password for user "ql-anshul-jha" took 454ms to verify
+warn --- Password for user "ql-anshul-jha" took 395ms to verify
+warn --- Password for user "ql-anshul-jha" took 339ms to verify
+warn --- Password for user "ql-anshul-jha" took 283ms to verify
+warn --- Password for user "ql-anshul-jha" took 228ms to verify
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-x64' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-x64', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-arm' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-arm', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Faix-ppc64'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fwin32-ia32'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Flinux-ia32'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fwin32-x64'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fsunos-x64'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fandroid-x64'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fnetbsd-x64'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fdarwin-x64'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fandroid-arm'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2flinux-x64', bytes: 0/53091
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2flinux-arm', bytes: 0/52763
+info <-- 127.0.0.1 requested 'GET /@esbuild%2ffreebsd-x64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2ffreebsd-x64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2flinux-arm64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2flinux-arm64', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fandroid-x64' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fandroid-x64', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fwin32-ia32' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fwin32-ia32', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Faix-ppc64' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Faix-ppc64', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fnetbsd-x64' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fnetbsd-x64', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fwin32-x64' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fwin32-x64', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fdarwin-x64' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fdarwin-x64', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-ia32' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-ia32', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fsunos-x64' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fsunos-x64', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Ffreebsd-x64'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Flinux-arm64'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2faix-ppc64', bytes: 0/13207
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fwin32-x64', bytes: 0/52897
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fwin32-ia32', bytes: 0/53152
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fdarwin-x64', bytes: 0/53095
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fandroid-x64', bytes: 0/53220
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fnetbsd-x64', bytes: 0/53173
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2flinux-ia32', bytes: 0/53087
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fsunos-x64', bytes: 0/53100
+info <-- 127.0.0.1 requested 'GET /@esbuild%2flinux-ppc64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2flinux-ppc64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fdarwin-arm64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fdarwin-arm64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2flinux-s390x'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2flinux-s390x', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fwin32-arm64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fwin32-arm64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fopenbsd-x64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fopenbsd-x64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2fandroid-arm64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2fandroid-arm64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2ffreebsd-arm64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2ffreebsd-arm64', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Ffreebsd-x64' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Ffreebsd-x64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2flinux-loong64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2flinux-loong64', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-arm64' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-arm64', bytes: 0/0
+warn --- Password for user "ql-anshul-jha" took 222ms to verify
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Flinux-ppc64'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fdarwin-arm64'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Flinux-s390x'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fopenbsd-x64'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Ffreebsd-arm64'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fandroid-arm64'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Fwin32-arm64'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Flinux-loong64'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2flinux-arm64', bytes: 0/52847
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2ffreebsd-x64', bytes: 0/53025
+info <-- 127.0.0.1 requested 'GET /@esbuild%2flinux-riscv64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2flinux-riscv64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@esbuild%2flinux-mips64el'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@esbuild%2flinux-mips64el', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-ppc64' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-ppc64', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-loong64' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-loong64', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fwin32-arm64' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fwin32-arm64', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-s390x' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-s390x', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Ffreebsd-arm64' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Ffreebsd-arm64', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fandroid-arm64' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fandroid-arm64', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fopenbsd-x64' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fopenbsd-x64', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fdarwin-arm64' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fdarwin-arm64', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fandroid-arm' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Fandroid-arm', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Flinux-riscv64'
+info --- making request: 'GET https://registry.npmjs.org/@esbuild%2Flinux-mips64el'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fwin32-arm64', bytes: 0/53235
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2ffreebsd-arm64', bytes: 0/52857
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2flinux-ppc64', bytes: 0/52986
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2flinux-s390x', bytes: 0/52997
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fandroid-arm64', bytes: 0/53257
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fdarwin-arm64', bytes: 0/53143
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fopenbsd-x64', bytes: 0/53080
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2flinux-loong64', bytes: 0/71220
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2fandroid-arm', bytes: 0/62250
+info <-- 127.0.0.1 requested 'GET /nanoid'
+http <-- 200, user: null(127.0.0.1), req: 'GET /nanoid', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /source-map-js'
+http <-- 200, user: null(127.0.0.1), req: 'GET /source-map-js', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-darwin-arm64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-darwin-arm64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-android-arm64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-android-arm64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-win32-arm64-msvc'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-win32-arm64-msvc', bytes: 0/0
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-mips64el' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-mips64el', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-freebsd-arm64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-freebsd-arm64', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-linux-arm64-gnu'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-linux-arm64-gnu', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-linux-arm64-musl'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-linux-arm64-musl', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-android-arm-eabi'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-android-arm-eabi', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/nanoid'
+info --- making request: 'GET https://registry.npmjs.org/source-map-js'
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-darwin-arm64'
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-android-arm64'
+warn --- Password for user "ql-anshul-jha" took 292ms to verify
+warn --- Password for user "ql-anshul-jha" took 234ms to verify
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-freebsd-arm64'
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-win32-arm64-msvc'
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-arm64-musl'
+http --- 200, req: 'GET https://registry.npmjs.org/source-map-js' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/nanoid' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-android-arm64' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-darwin-arm64' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-android-arm-eabi'
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-arm64-gnu'
+http --- 200, req: 'GET https://registry.npmjs.org/source-map-js', bytes: 0/62640
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-android-arm64', bytes: 0/335499
+http --- 200, req: 'GET https://registry.npmjs.org/nanoid', bytes: 0/304025
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-darwin-arm64', bytes: 0/334013
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /source-map-js', bytes: 0/14177
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2flinux-mips64el', bytes: 0/53053
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-linux-arm-gnueabihf'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-linux-arm-gnueabihf', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-linux-arm-musleabihf'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-linux-arm-musleabihf', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-android-arm-eabi' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-win32-arm64-msvc' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-freebsd-arm64' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-arm64-musl' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-arm-gnueabihf'
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-arm64-gnu' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-arm-gnueabihf' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-arm-musleabihf'
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-freebsd-arm64', bytes: 0/183704
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-android-arm64', bytes: 0/57067
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /nanoid', bytes: 0/81636
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-darwin-arm64', bytes: 0/56980
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-arm64-musl', bytes: 0/296459
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-win32-arm64-msvc', bytes: 0/338858
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-android-arm-eabi', bytes: 0/338865
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-win32-ia32-msvc'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-win32-ia32-msvc', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-linux-loong64-gnu'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-linux-loong64-gnu', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-linux-loong64-musl'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-linux-loong64-musl', bytes: 0/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-freebsd-arm64', bytes: 0/30960
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-linux-riscv64-gnu'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-linux-riscv64-gnu', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-arm-musleabihf' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-win32-ia32-msvc'
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-loong64-gnu'
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-arm-gnueabihf', bytes: 0/344529
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-loong64-musl'
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-arm64-gnu', bytes: 0/341084
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-loong64-musl' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-loong64-gnu' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-win32-ia32-msvc' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-riscv64-gnu'
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-loong64-musl', bytes: 0/27506
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-linux-arm64-musl', bytes: 0/49445
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-win32-arm64-msvc', bytes: 0/57038
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-loong64-gnu', bytes: 0/65514
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-android-arm-eabi', bytes: 0/57037
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-linux-riscv64-musl'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-linux-riscv64-musl', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-linux-ppc64-gnu'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-linux-ppc64-gnu', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-linux-ppc64-musl'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-linux-ppc64-musl', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-arm-musleabihf', bytes: 0/238694
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-linux-arm-gnueabihf', bytes: 0/57016
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-linux-loong64-musl', bytes: 0/5198
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-riscv64-musl'
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-ppc64-gnu'
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-ppc64-musl'
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-linux-s390x-gnu'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-linux-s390x-gnu', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-darwin-x64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-darwin-x64', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-riscv64-gnu' (streaming)
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-linux-arm64-gnu', bytes: 0/56983
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-linux-loong64-gnu', bytes: 0/11017
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-s390x-gnu'
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-win32-x64-gnu'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-win32-x64-gnu', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-win32-x64-msvc'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-win32-x64-msvc', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-riscv64-musl' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-ppc64-gnu' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-ppc64-musl' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-darwin-x64'
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-ppc64-musl', bytes: 0/27278
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-win32-ia32-msvc', bytes: 0/337389
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-win32-x64-msvc'
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-s390x-gnu' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-darwin-x64' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-win32-x64-gnu'
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-ppc64-gnu', bytes: 0/85764
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-linux-arm-musleabihf', bytes: 0/39453
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-riscv64-musl', bytes: 0/113171
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-freebsd-x64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-freebsd-x64', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-riscv64-gnu', bytes: 0/267201
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-linux-ppc64-musl', bytes: 0/5202
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-linux-x64-gnu'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-linux-x64-gnu', bytes: 0/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-linux-riscv64-musl', bytes: 0/18875
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-linux-ppc64-gnu', bytes: 0/14502
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-linux-x64-musl'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-linux-x64-musl', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-win32-x64-gnu' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-win32-x64-msvc' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-freebsd-x64'
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-s390x-gnu', bytes: 0/240933
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-win32-ia32-msvc', bytes: 0/57053
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-openbsd-x64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-openbsd-x64', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-x64-gnu'
+info <-- 127.0.0.1 requested 'GET /@rollup%2frollup-openharmony-arm64'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup%2frollup-openharmony-arm64', bytes: 0/0
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-win32-x64-gnu', bytes: 0/57152
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-freebsd-x64' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-x64-musl'
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-darwin-x64', bytes: 0/329247
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-x64-gnu' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-x64-musl' (streaming)
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-openbsd-x64'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-linux-riscv64-gnu', bytes: 0/44585
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-riscv64' (streaming)
+http --- 304, req: 'GET https://registry.npmjs.org/@esbuild%2Flinux-riscv64', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@rollup%2Frollup-openharmony-arm64'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-win32-x64-gnu', bytes: 0/9993
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-freebsd-x64', bytes: 0/181830
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-linux-s390x-gnu', bytes: 0/40554
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-win32-x64-msvc', bytes: 0/334053
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@esbuild%2flinux-riscv64', bytes: 0/52939
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-darwin-x64', bytes: 0/56729
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-x64-gnu', bytes: 0/336253
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-linux-x64-musl', bytes: 0/335593
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-freebsd-x64', bytes: 0/31065
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-win32-x64-msvc', bytes: 0/56805
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-linux-x64-gnu', bytes: 0/56666
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-linux-x64-musl', bytes: 0/56395
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-openharmony-arm64' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-openharmony-arm64', bytes: 0/66417
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-openharmony-arm64', bytes: 0/11316
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-openbsd-x64' (streaming)
+http --- 200, req: 'GET https://registry.npmjs.org/@rollup%2Frollup-openbsd-x64', bytes: 0/26573
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup%2frollup-openbsd-x64', bytes: 0/5202
+info <-- 127.0.0.1 requested 'GET /balanced-match'
+http <-- 200, user: null(127.0.0.1), req: 'GET /balanced-match', bytes: 0/0
+http <-- 304, user: ql-anshul-jha(127.0.0.1), req: 'GET /balanced-match', bytes: 0/0
+info <-- 127.0.0.1 requested 'POST /-/npm/v1/security/advisories/bulk'
+http <-- 200, user: null(127.0.0.1), req: 'POST /-/npm/v1/security/advisories/bulk', bytes: 1934/0
+info <-- 127.0.0.1 requested 'GET /@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.60.2.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.60.2.tgz', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /postcss/-/postcss-8.5.10.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /postcss/-/postcss-8.5.10.tgz', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint/project-service/-/project-service-8.58.2.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint/project-service/-/project-service-8.58.2.tgz', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint/tsconfig-utils/-/tsconfig-utils-8.58.2.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint/tsconfig-utils/-/tsconfig-utils-8.58.2.tgz', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint/typescript-estree/-/typescript-estree-8.58.2.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint/typescript-estree/-/typescript-estree-8.58.2.tgz', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint/type-utils/-/type-utils-8.58.2.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint/type-utils/-/type-utils-8.58.2.tgz', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /rollup/-/rollup-4.60.2.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /rollup/-/rollup-4.60.2.tgz', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint/parser/-/parser-8.58.2.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint/parser/-/parser-8.58.2.tgz', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint/utils/-/utils-8.58.2.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint/utils/-/utils-8.58.2.tgz', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint/visitor-keys/-/visitor-keys-8.58.2.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint/visitor-keys/-/visitor-keys-8.58.2.tgz', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /brace-expansion/-/brace-expansion-1.1.14.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /brace-expansion/-/brace-expansion-1.1.14.tgz', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint/eslint-plugin/-/eslint-plugin-8.58.2.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint/eslint-plugin/-/eslint-plugin-8.58.2.tgz', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@humanfs/core/-/core-0.19.2.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@humanfs/core/-/core-0.19.2.tgz', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint/types/-/types-8.58.2.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint/types/-/types-8.58.2.tgz', bytes: 0/0
+warn --- Password for user "ql-anshul-jha" took 493ms to verify
+warn --- Password for user "ql-anshul-jha" took 434ms to verify
+warn --- Password for user "ql-anshul-jha" took 374ms to verify
+warn --- Password for user "ql-anshul-jha" took 312ms to verify
+warn --- Password for user "ql-anshul-jha" took 248ms to verify
+info --- making request: 'GET https://registry.npmjs.org/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.60.2.tgz'
+info --- making request: 'GET https://registry.npmjs.org/postcss/-/postcss-8.5.10.tgz'
+info --- making request: 'GET https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.14.tgz'
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint/project-service/-/project-service-8.58.2.tgz'
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint/tsconfig-utils/-/tsconfig-utils-8.58.2.tgz'
+info --- making request: 'GET https://registry.npmjs.org/@humanfs/core/-/core-0.19.2.tgz'
+info --- making request: 'GET https://registry.npmjs.org/rollup/-/rollup-4.60.2.tgz'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /brace-expansion/-/brace-expansion-1.1.14.tgz', bytes: 0/4324
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint/project-service/-/project-service-8.58.2.tgz', bytes: 0/5055
+info <-- 127.0.0.1 requested 'GET /@humanfs/types/-/types-0.15.0.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@humanfs/types/-/types-0.15.0.tgz', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /@humanfs/node/-/node-0.16.8.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@humanfs/node/-/node-0.16.8.tgz', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint/type-utils/-/type-utils-8.58.2.tgz'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint/tsconfig-utils/-/tsconfig-utils-8.58.2.tgz', bytes: 0/3604
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@humanfs/core/-/core-0.19.2.tgz', bytes: 0/14283
+info <-- 127.0.0.1 requested 'GET /@typescript-eslint/scope-manager/-/scope-manager-8.58.2.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@typescript-eslint/scope-manager/-/scope-manager-8.58.2.tgz', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /electron-to-chromium/-/electron-to-chromium-1.5.340.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /electron-to-chromium/-/electron-to-chromium-1.5.340.tgz', bytes: 0/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /postcss/-/postcss-8.5.10.tgz', bytes: 0/48111
+http <-- 200, user: null(127.0.0.1), req: 'POST /-/npm/v1/security/advisories/bulk', bytes: 1934/629
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint/utils/-/utils-8.58.2.tgz'
+info <-- 127.0.0.1 requested 'GET /baseline-browser-mapping/-/baseline-browser-mapping-2.10.20.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /baseline-browser-mapping/-/baseline-browser-mapping-2.10.20.tgz', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@humanfs/types/-/types-0.15.0.tgz'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint/type-utils/-/type-utils-8.58.2.tgz', bytes: 0/17357
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint/visitor-keys/-/visitor-keys-8.58.2.tgz'
+info <-- 127.0.0.1 requested 'GET /caniuse-lite/-/caniuse-lite-1.0.30001788.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /caniuse-lite/-/caniuse-lite-1.0.30001788.tgz', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@humanfs/node/-/node-0.16.8.tgz'
+info <-- 127.0.0.1 requested 'GET /typescript-eslint/-/typescript-eslint-8.58.2.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /typescript-eslint/-/typescript-eslint-8.58.2.tgz', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint/types/-/types-8.58.2.tgz'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@humanfs/types/-/types-0.15.0.tgz', bytes: 0/3889
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint/visitor-keys/-/visitor-keys-8.58.2.tgz', bytes: 0/4254
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint/parser/-/parser-8.58.2.tgz'
+info <-- 127.0.0.1 requested 'GET /esbuild'
+http <-- 200, user: null(127.0.0.1), req: 'GET /esbuild', bytes: 0/0
+info <-- 127.0.0.1 requested 'GET /vite'
+http <-- 200, user: null(127.0.0.1), req: 'GET /vite', bytes: 0/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint/utils/-/utils-8.58.2.tgz', bytes: 0/43618
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@humanfs/node/-/node-0.16.8.tgz', bytes: 0/9421
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint/typescript-estree/-/typescript-estree-8.58.2.tgz'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint/types/-/types-8.58.2.tgz', bytes: 0/19626
+info --- making request: 'GET https://registry.npmjs.org/baseline-browser-mapping/-/baseline-browser-mapping-2.10.20.tgz'
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint/eslint-plugin/-/eslint-plugin-8.58.2.tgz'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint/parser/-/parser-8.58.2.tgz', bytes: 0/4461
+info --- making request: 'GET https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001788.tgz'
+info --- making request: 'GET https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.5.340.tgz'
+info --- making request: 'GET https://registry.npmjs.org/typescript-eslint/-/typescript-eslint-8.58.2.tgz'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint/typescript-estree/-/typescript-estree-8.58.2.tgz', bytes: 0/73739
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /baseline-browser-mapping/-/baseline-browser-mapping-2.10.20.tgz', bytes: 0/52083
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /electron-to-chromium/-/electron-to-chromium-1.5.340.tgz', bytes: 0/31858
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /typescript-eslint/-/typescript-eslint-8.58.2.tgz', bytes: 0/7352
+info --- making request: 'GET https://registry.npmjs.org/@typescript-eslint/scope-manager/-/scope-manager-8.58.2.tgz'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint/scope-manager/-/scope-manager-8.58.2.tgz', bytes: 0/65641
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /esbuild', bytes: 0/336572
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /rollup/-/rollup-4.60.2.tgz', bytes: 0/569159
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /caniuse-lite/-/caniuse-lite-1.0.30001788.tgz', bytes: 0/330441
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@typescript-eslint/eslint-plugin/-/eslint-plugin-8.58.2.tgz', bytes: 0/339804
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.60.2.tgz', bytes: 0/893254
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /vite', bytes: 0/420113
+info <-- 127.0.0.1 requested 'GET /@vitejs%2fplugin-react'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@vitejs%2fplugin-react', bytes: 0/0
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@vitejs%2fplugin-react', bytes: 0/38352
+info <-- 127.0.0.1 requested 'GET /@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.60.2.tgz'
+http <-- 200, user: null(127.0.0.1), req: 'GET /@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.60.2.tgz', bytes: 0/0
+info --- making request: 'GET https://registry.npmjs.org/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.60.2.tgz'
+http <-- 200, user: ql-anshul-jha(127.0.0.1), req: 'GET /@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.60.2.tgz', bytes: 0/898596

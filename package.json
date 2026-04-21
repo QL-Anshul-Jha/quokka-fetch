@@ -1,22 +1,14 @@
 {
-  "name": "blazion",
-  "version": "1.0.0",
-  "description": "A lightweight fetch wrapper exclusively for @quokkalabs.com",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist/**/*.js",
-    "dist/**/*.d.ts",
-    "scripts/preinstall.js",
-    "!dist/test.*",
-    "!dist/demo.*"
+  "private": true,
+  "workspaces": [
+    "packages/*"
   ],
   "scripts": {
     "preinstall": "node scripts/preinstall.js",
     "prepare": "husky",
-    "lint": "eslint src/ --max-warnings=0",
-    "build": "npm run lint && tsc",
-    "start": "node dist/test.js"
+    "lint": "npm run lint --workspaces",
+    "build": "npm run build --workspaces",
+    "start": "node packages/core/dist/test.js"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
